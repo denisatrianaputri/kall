@@ -57,6 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tugas';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -180,6 +182,7 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Sistem Persamaan Linier</a></li>
+
 </ul>
 
     </div>
@@ -375,10 +378,21 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Sistem Persamaan Linier</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian">Pengertian</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jenis-jenis">Jenis-jenis</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bentuk-umum">Bentuk umum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-penyelesaian">Solusi penyelesaian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh">Contoh</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-gaussian">Eliminasi Gaussian</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-penyelesaian-menggunakan-eliminasi-gauss">Contoh penyelesaian menggunakan eliminasi gauss</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persamaan-bidang-dalam-ruang-3d">Persamaan Bidang Dalam Ruang 3D</a></li>
+</ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -413,8 +427,422 @@ document.write(`
 </section>
 <section id="bentuk-umum">
 <h2>Bentuk umum<a class="headerlink" href="#bentuk-umum" title="Link to this heading">#</a></h2>
-<p>Sistem persamaan linear m dengan n yang tidak diketahui dapat ditulis seperti ini:</p>
-<p>![a.svg](data:image/svg+xml;base64,PHN2ZyB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgd2lkdGg9IjM3LjA3NGV4IiBoZWlnaHQ9IjEzLjE3NmV4IiBzdHlsZT0idmVydGljYWwtYWxpZ246IC02LjAwNWV4OyIgdmlld0JveD0iMCAtMzA4Ny42IDE1OTYyLjYgNTY3MyIgcm9sZT0iaW1nIiBmb2N1c2FibGU9ImZhbHNlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGFyaWEtbGFiZWxsZWRieT0iTWF0aEpheC1TVkctMS1UaXRsZSI+Cjx0aXRsZSBpZD0iTWF0aEpheC1TVkctMS1UaXRsZSI+e1xkaXNwbGF5c3R5bGUge1xiZWdpbnthbGlnbmVkfWFfezExfXhfezF9JmFtcDsrYV97MTJ9eF97Mn0rXGNkb3RzICthX3sxbn14X3tufT1iX3sxfVxcYV97MjF9eF97MX0mYW1wOythX3syMn14X3syfStcY2RvdHMgK2FfezJufXhfe259PWJfezJ9XFxcdmRvdHMgJmFtcDtcXGFfe20xfXhfezF9JmFtcDsrYV97bTJ9eF97Mn0rXGNkb3RzICthX3ttbn14X3tufT1iX3ttfSxcZW5ke2FsaWduZWR9fX08L3RpdGxlPgo8ZGVmcyBhcmlhLWhpZGRlbj0idHJ1ZSI+CjxwYXRoIHN0cm9rZS13aWR0aD0iMSIgaWQ9IkUxLU1KTUFUSEktNjEiIGQ9Ik0zMyAxNTdRMzMgMjU4IDEwOSAzNDlUMjgwIDQ0MVEzMzEgNDQxIDM3MCAzOTJRMzg2IDQyMiA0MTYgNDIyUTQyOSA0MjIgNDM5IDQxNFQ0NDkgMzk0UTQ0OSAzODEgNDEyIDIzNFQzNzQgNjhRMzc0IDQzIDM4MSAzNVQ0MDIgMjZRNDExIDI3IDQyMiAzNVE0NDMgNTUgNDYzIDEzMVE0NjkgMTUxIDQ3MyAxNTJRNDc1IDE1MyA0ODMgMTUzSDQ4N1E1MDYgMTUzIDUwNiAxNDRRNTA2IDEzOCA1MDEgMTE3VDQ4MSA2M1Q0NDkgMTNRNDM2IDAgNDE3IC04UTQwOSAtMTAgMzkzIC0xMFEzNTkgLTEwIDMzNiA1VDMwNiAzNkwzMDAgNTFRMjk5IDUyIDI5NiA1MFEyOTQgNDggMjkyIDQ2UTIzMyAtMTAgMTcyIC0xMFExMTcgLTEwIDc1IDMwVDMzIDE1N1pNMzUxIDMyOFEzNTEgMzM0IDM0NiAzNTBUMzIzIDM4NVQyNzcgNDA1UTI0MiA0MDUgMjEwIDM3NFQxNjAgMjkzUTEzMSAyMTQgMTE5IDEyOVExMTkgMTI2IDExOSAxMThUMTE4IDEwNlExMTggNjEgMTM2IDQ0VDE3OSAyNlEyMTcgMjYgMjU0IDU5VDI5OCAxMTBRMzAwIDExNCAzMjUgMjE3VDM1MSAzMjhaIj48L3BhdGg+CjxwYXRoIHN0cm9rZS13aWR0aD0iMSIgaWQ9IkUxLU1KTUFJTi0zMSIgZD0iTTIxMyA1NzhMMjAwIDU3M1ExODYgNTY4IDE2MCA1NjNUMTAyIDU1Nkg4M1Y2MDJIMTAyUTE0OSA2MDQgMTg5IDYxN1QyNDUgNjQxVDI3MyA2NjNRMjc1IDY2NiAyODUgNjY2UTI5NCA2NjYgMzAyIDY2MFYzNjFMMzAzIDYxUTMxMCA1NCAzMTUgNTJUMzM5IDQ4VDQwMSA0Nkg0MjdWMEg0MTZRMzk1IDMgMjU3IDNRMTIxIDMgMTAwIDBIODhWNDZIMTE0UTEzNiA0NiAxNTIgNDZUMTc3IDQ3VDE5MyA1MFQyMDEgNTJUMjA3IDU3VDIxMyA2MVY1NzhaIj48L3BhdGg+CjxwYXRoIHN0cm9rZS13aWR0aD0iMSIgaWQ9IkUxLU1KTUFUSEktNzgiIGQ9Ik01MiAyODlRNTkgMzMxIDEwNiAzODZUMjIyIDQ0MlEyNTcgNDQyIDI4NiA0MjRUMzI5IDM3OVEzNzEgNDQyIDQzMCA0NDJRNDY3IDQ0MiA0OTQgNDIwVDUyMiAzNjFRNTIyIDMzMiA1MDggMzE0VDQ4MSAyOTJUNDU4IDI4OFE0MzkgMjg4IDQyNyAyOTlUNDE1IDMyOFE0MTUgMzc0IDQ2NSAzOTFRNDU0IDQwNCA0MjUgNDA0UTQxMiA0MDQgNDA2IDQwMlEzNjggMzg2IDM1MCAzMzZRMjkwIDExNSAyOTAgNzhRMjkwIDUwIDMwNiAzOFQzNDEgMjZRMzc4IDI2IDQxNCA1OVQ0NjMgMTQwUTQ2NiAxNTAgNDY5IDE1MVQ0ODUgMTUzSDQ4OVE1MDQgMTUzIDUwNCAxNDVRNTA0IDE0NCA1MDIgMTM0UTQ4NiA3NyA0NDAgMzNUMzMzIC0xMVEyNjMgLTExIDIyNyA1MlExODYgLTEwIDEzMyAtMTBIMTI3UTc4IC0xMCA1NyAxNlQzNSA3MVEzNSAxMDMgNTQgMTIzVDk5IDE0M1ExNDIgMTQzIDE0MiAxMDFRMTQyIDgxIDEzMCA2NlQxMDcgNDZUOTQgNDFMOTEgNDBROTEgMzkgOTcgMzZUMTEzIDI5VDEzMiAyNlExNjggMjYgMTk0IDcxUTIwMyA4NyAyMTcgMTM5VDI0NSAyNDdUMjYxIDMxM1EyNjYgMzQwIDI2NiAzNTJRMjY2IDM4MCAyNTEgMzkyVDIxNyA0MDRRMTc3IDQwNCAxNDIgMzcyVDkzIDI5MFE5MSAyODEgODggMjgwVDcyIDI3OEg1OFE1MiAyODQgNTIgMjg5WiI+PC9wYXRoPgo8cGF0aCBzdHJva2Utd2lkdGg9IjEiIGlkPSJFMS1NSk1BSU4tMkIiIGQ9Ik01NiAyMzdUNTYgMjUwVDcwIDI3MEgzNjlWNDIwTDM3MCA1NzBRMzgwIDU4MyAzODkgNTgzUTQwMiA1ODMgNDA5IDU2OFYyNzBINzA3UTcyMiAyNjIgNzIyIDI1MFQ3MDcgMjMwSDQwOVYtNjhRNDAxIC04MiAzOTEgLTgySDM4OUgzODdRMzc1IC04MiAzNjkgLTY4VjIzMEg3MFE1NiAyMzcgNTYgMjUwWiI+PC9wYXRoPgo8cGF0aCBzdHJva2Utd2lkdGg9IjEiIGlkPSJFMS1NSk1BSU4tMzIiIGQ9Ik0xMDkgNDI5UTgyIDQyOSA2NiA0NDdUNTAgNDkxUTUwIDU2MiAxMDMgNjE0VDIzNSA2NjZRMzI2IDY2NiAzODcgNjEwVDQ0OSA0NjVRNDQ5IDQyMiA0MjkgMzgzVDM4MSAzMTVUMzAxIDI0MVEyNjUgMjEwIDIwMSAxNDlMMTQyIDkzTDIxOCA5MlEzNzUgOTIgMzg1IDk3UTM5MiA5OSA0MDkgMTg2VjE4OUg0NDlWMTg2UTQ0OCAxODMgNDM2IDk1VDQyMSAzVjBINTBWMTlWMzFRNTAgMzggNTYgNDZUODYgODFRMTE1IDExMyAxMzYgMTM3UTE0NSAxNDcgMTcwIDE3NFQyMDQgMjExVDIzMyAyNDRUMjYxIDI3OFQyODQgMzA4VDMwNSAzNDBUMzIwIDM2OVQzMzMgNDAxVDM0MCA0MzFUMzQzIDQ2NFEzNDMgNTI3IDMwOSA1NzNUMjEyIDYxOVExNzkgNjE5IDE1NCA2MDJUMTE5IDU2OVQxMDkgNTUwUTEwOSA1NDkgMTE0IDU0OVExMzIgNTQ5IDE1MSA1MzVUMTcwIDQ4OVExNzAgNDY0IDE1NCA0NDdUMTA5IDQyOVoiPjwvcGF0aD4KPHBhdGggc3Ryb2tlLXdpZHRoPSIxIiBpZD0iRTEtTUpNQUlOLTIyRUYiIGQ9Ik03OCAyNTBRNzggMjc0IDk1IDI5MlQxMzggMzEwUTE2MiAzMTAgMTgwIDI5NFQxOTkgMjUxUTE5OSAyMjYgMTgyIDIwOFQxMzkgMTkwVDk2IDIwN1Q3OCAyNTBaTTUyNSAyNTBRNTI1IDI3NCA1NDIgMjkyVDU4NSAzMTBRNjA5IDMxMCA2MjcgMjk0VDY0NiAyNTFRNjQ2IDIyNiA2MjkgMjA4VDU4NiAxOTBUNTQzIDIwN1Q1MjUgMjUwWk05NzIgMjUwUTk3MiAyNzQgOTg5IDI5MlQxMDMyIDMxMFExMDU2IDMxMCAxMDc0IDI5NFQxMDkzIDI1MVExMDkzIDIyNiAxMDc2IDIwOFQxMDMzIDE5MFQ5OTAgMjA3VDk3MiAyNTBaIj48L3BhdGg+CjxwYXRoIHN0cm9rZS13aWR0aD0iMSIgaWQ9IkUxLU1KTUFUSEktNkUiIGQ9Ik0yMSAyODdRMjIgMjkzIDI0IDMwM1QzNiAzNDFUNTYgMzg4VDg5IDQyNVQxMzUgNDQyUTE3MSA0NDIgMTk1IDQyNFQyMjUgMzkwVDIzMSAzNjlRMjMxIDM2NyAyMzIgMzY3TDI0MyAzNzhRMzA0IDQ0MiAzODIgNDQyUTQzNiA0NDIgNDY5IDQxNVQ1MDMgMzM2VDQ2NSAxNzlUNDI3IDUyUTQyNyAyNiA0NDQgMjZRNDUwIDI2IDQ1MyAyN1E0ODIgMzIgNTA1IDY1VDU0MCAxNDVRNTQyIDE1MyA1NjAgMTUzUTU4MCAxNTMgNTgwIDE0NVE1ODAgMTQ0IDU3NiAxMzBRNTY4IDEwMSA1NTQgNzNUNTA4IDE3VDQzOSAtMTBRMzkyIC0xMCAzNzEgMTdUMzUwIDczUTM1MCA5MiAzODYgMTkzVDQyMyAzNDVRNDIzIDQwNCAzNzkgNDA0SDM3NFEyODggNDA0IDIyOSAzMDNMMjIyIDI5MUwxODkgMTU3UTE1NiAyNiAxNTEgMTZRMTM4IC0xMSAxMDggLTExUTk1IC0xMSA4NyAtNVQ3NiA3VDc0IDE3UTc0IDMwIDExMiAxODBUMTUyIDM0M1ExNTMgMzQ4IDE1MyAzNjZRMTUzIDQwNSAxMjkgNDA1UTkxIDQwNSA2NiAzMDVRNjAgMjg1IDYwIDI4NFE1OCAyNzggNDEgMjc4SDI3UTIxIDI4NCAyMSAyODdaIj48L3BhdGg+CjxwYXRoIHN0cm9rZS13aWR0aD0iMSIgaWQ9IkUxLU1KTUFJTi0zRCIgZD0iTTU2IDM0N1E1NiAzNjAgNzAgMzY3SDcwN1E3MjIgMzU5IDcyMiAzNDdRNzIyIDMzNiA3MDggMzI4TDM5MCAzMjdINzJRNTYgMzMyIDU2IDM0N1pNNTYgMTUzUTU2IDE2OCA3MiAxNzNINzA4UTcyMiAxNjMgNzIyIDE1M1E3MjIgMTQwIDcwNyAxMzNINzBRNTYgMTQwIDU2IDE1M1oiPjwvcGF0aD4KPHBhdGggc3Ryb2tlLXdpZHRoPSIxIiBpZD0iRTEtTUpNQVRISS02MiIgZD0iTTczIDY0N1E3MyA2NTcgNzcgNjcwVDg5IDY4M1E5MCA2ODMgMTYxIDY4OFQyMzQgNjk0UTI0NiA2OTQgMjQ2IDY4NVQyMTIgNTQyUTIwNCA1MDggMTk1IDQ3MlQxODAgNDE4TDE3NiAzOTlRMTc2IDM5NiAxODIgNDAyUTIzMSA0NDIgMjgzIDQ0MlEzNDUgNDQyIDM4MyAzOTZUNDIyIDI4MFE0MjIgMTY5IDM0MyA3OVQxNzMgLTExUTEyMyAtMTEgODIgMjdUNDAgMTUwVjE1OVE0MCAxODAgNDggMjE3VDk3IDQxNFExNDcgNjExIDE0NyA2MjNUMTA5IDYzN1ExMDQgNjM3IDEwMSA2MzdIOTZRODYgNjM3IDgzIDYzN1Q3NiA2NDBUNzMgNjQ3Wk0zMzYgMzI1VjMzMVEzMzYgNDA1IDI3NSA0MDVRMjU4IDQwNSAyNDAgMzk3VDIwNyAzNzZUMTgxIDM1MlQxNjMgMzMwTDE1NyAzMjJMMTM2IDIzNlExMTQgMTUwIDExNCAxMTRRMTE0IDY2IDEzOCA0MlExNTQgMjYgMTc4IDI2UTIxMSAyNiAyNDUgNThRMjcwIDgxIDI4NSAxMTRUMzE4IDIxOVEzMzYgMjkxIDMzNiAzMjVaIj48L3BhdGg+CjxwYXRoIHN0cm9rZS13aWR0aD0iMSIgaWQ9IkUxLU1KTUFJTi0yMkVFIiBkPSJNNzggMzBRNzggNTQgOTUgNzJUMTM4IDkwUTE2MiA5MCAxODAgNzRUMTk5IDMxUTE5OSA2IDE4MiAtMTJUMTM5IC0zMFQ5NiAtMTNUNzggMzBaTTc4IDQ0MFE3OCA0NjQgOTUgNDgyVDEzOCA1MDBRMTYyIDUwMCAxODAgNDg0VDE5OSA0NDFRMTk5IDQxNiAxODIgMzk4VDEzOSAzODBUOTYgMzk3VDc4IDQ0MFpNNzggODQwUTc4IDg2NCA5NSA4ODJUMTM4IDkwMFExNjIgOTAwIDE4MCA4ODRUMTk5IDg0MVExOTkgODE2IDE4MiA3OThUMTM5IDc4MFQ5NiA3OTdUNzggODQwWiI+PC9wYXRoPgo8cGF0aCBzdHJva2Utd2lkdGg9IjEiIGlkPSJFMS1NSk1BVEhJLTZEIiBkPSJNMjEgMjg3UTIyIDI5MyAyNCAzMDNUMzYgMzQxVDU2IDM4OFQ4OCA0MjVUMTMyIDQ0MlQxNzUgNDM1VDIwNSA0MTdUMjIxIDM5NVQyMjkgMzc2TDIzMSAzNjlRMjMxIDM2NyAyMzIgMzY3TDI0MyAzNzhRMzAzIDQ0MiAzODQgNDQyUTQwMSA0NDIgNDE1IDQ0MFQ0NDEgNDMzVDQ2MCA0MjNUNDc1IDQxMVQ0ODUgMzk4VDQ5MyAzODVUNDk3IDM3M1Q1MDAgMzY0VDUwMiAzNTdMNTEwIDM2N1E1NzMgNDQyIDY1OSA0NDJRNzEzIDQ0MiA3NDYgNDE1VDc4MCAzMzZRNzgwIDI4NSA3NDIgMTc4VDcwNCA1MFE3MDUgMzYgNzA5IDMxVDcyNCAyNlE3NTIgMjYgNzc2IDU2VDgxNSAxMzhRODE4IDE0OSA4MjEgMTUxVDgzNyAxNTNRODU3IDE1MyA4NTcgMTQ1UTg1NyAxNDQgODUzIDEzMFE4NDUgMTAxIDgzMSA3M1Q3ODUgMTdUNzE2IC0xMFE2NjkgLTEwIDY0OCAxN1Q2MjcgNzNRNjI3IDkyIDY2MyAxOTNUNzAwIDM0NVE3MDAgNDA0IDY1NiA0MDRINjUxUTU2NSA0MDQgNTA2IDMwM0w0OTkgMjkxTDQ2NiAxNTdRNDMzIDI2IDQyOCAxNlE0MTUgLTExIDM4NSAtMTFRMzcyIC0xMSAzNjQgLTRUMzUzIDhUMzUwIDE4UTM1MCAyOSAzODQgMTYxTDQyMCAzMDdRNDIzIDMyMiA0MjMgMzQ1UTQyMyA0MDQgMzc5IDQwNEgzNzRRMjg4IDQwNCAyMjkgMzAzTDIyMiAyOTFMMTg5IDE1N1ExNTYgMjYgMTUxIDE2UTEzOCAtMTEgMTA4IC0xMVE5NSAtMTEgODcgLTVUNzYgN1Q3NCAxN1E3NCAzMCAxMTIgMTgxUTE1MSAzMzUgMTUxIDM0MlExNTQgMzU3IDE1NCAzNjlRMTU0IDQwNSAxMjkgNDA1UTEwNyA0MDUgOTIgMzc3VDY5IDMxNlQ1NyAyODBRNTUgMjc4IDQxIDI3OEgyN1EyMSAyODQgMjEgMjg3WiI+PC9wYXRoPgo8cGF0aCBzdHJva2Utd2lkdGg9IjEiIGlkPSJFMS1NSk1BSU4tMkMiIGQ9Ik03OCAzNVQ3OCA2MFQ5NCAxMDNUMTM3IDEyMVExNjUgMTIxIDE4NyA5NlQyMTAgOFEyMTAgLTI3IDIwMSAtNjBUMTgwIC0xMTdUMTU0IC0xNThUMTMwIC0xODVUMTE3IC0xOTRRMTEzIC0xOTQgMTA0IC0xODVUOTUgLTE3MlE5NSAtMTY4IDEwNiAtMTU2VDEzMSAtMTI2VDE1NyAtNzZUMTczIC0zVjlMMTcyIDhRMTcwIDcgMTY3IDZUMTYxIDNUMTUyIDFUMTQwIDBRMTEzIDAgOTYgMTdaIj48L3BhdGg+CjwvZGVmcz4KPGcgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIGZpbGw9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIwIiB0cmFuc2Zvcm09Im1hdHJpeCgxIDAgMCAtMSAwIDApIiBhcmlhLWhpZGRlbj0idHJ1ZSI+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE2NywwKSI+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMSwwKSI+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI2NywyMTUwKSI+CiA8dXNlIHhsaW5rOmhyZWY9IiNFMS1NSk1BVEhJLTYxIiB4PSIwIiB5PSIwIj48L3VzZT4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTI5LC0xNTApIj4KIDx1c2UgdHJhbnNmb3JtPSJzY2FsZSgwLjcwNykiIHhsaW5rOmhyZWY9IiNFMS1NSk1BSU4tMzEiPjwvdXNlPgogPHVzZSB0cmFuc2Zvcm09InNjYWxlKDAuNzA3KSIgeGxpbms6aHJlZj0iI0UxLU1KTUFJTi0zMSIgeD0iNTAwIiB5PSIwIj48L3VzZT4KPC9nPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMzM3LDApIj4KIDx1c2UgeGxpbms6aHJlZj0iI0UxLU1KTUFUSEktNzgiIHg9IjAiIHk9IjAiPjwvdXNlPgogPHVzZSB0cmFuc2Zvcm09InNjYWxlKDAuNzA3KSIgeGxpbms6aHJlZj0iI0UxLU1KTUFJTi0zMSIgeD0iODA5IiB5PSItMjEzIj48L3VzZT4KPC9nPgo8L2c+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI2Nyw4NTApIj4KIDx1c2UgeGxpbms6aHJlZj0iI0UxLU1KTUFUSEktNjEiIHg9IjAiIHk9IjAiPjwvdXNlPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1MjksLTE1MCkiPgogPHVzZSB0cmFuc2Zvcm09InNjYWxlKDAuNzA3KSIgeGxpbms6aHJlZj0iI0UxLU1KTUFJTi0zMiI+PC91c2U+CiA8dXNlIHRyYW5zZm9ybT0ic2NhbGUoMC43MDcpIiB4bGluazpocmVmPSIjRTEtTUpNQUlOLTMxIiB4PSI1MDAiIHk9IjAiPjwvdXNlPgo8L2c+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEzMzcsMCkiPgogPHVzZSB4bGluazpocmVmPSIjRTEtTUpNQVRISS03OCIgeD0iMCIgeT0iMCI+PC91c2U+CiA8dXNlIHRyYW5zZm9ybT0ic2NhbGUoMC43MDcpIiB4bGluazpocmVmPSIjRTEtTUpNQUlOLTMxIiB4PSI4MDkiIHk9Ii0yMTMiPjwvdXNlPgo8L2c+CjwvZz4KIDx1c2UgeGxpbms6aHJlZj0iI0UxLU1KTUFJTi0yMkVFIiB4PSIyMzUyIiB5PSItOTUxIj48L3VzZT4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwtMjI1MSkiPgogPHVzZSB4bGluazpocmVmPSIjRTEtTUpNQVRISS02MSIgeD0iMCIgeT0iMCI+PC91c2U+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUyOSwtMTUwKSI+CiA8dXNlIHRyYW5zZm9ybT0ic2NhbGUoMC43MDcpIiB4bGluazpocmVmPSIjRTEtTUpNQVRISS02RCIgeD0iMCIgeT0iMCI+PC91c2U+CiA8dXNlIHRyYW5zZm9ybT0ic2NhbGUoMC43MDcpIiB4bGluazpocmVmPSIjRTEtTUpNQUlOLTMxIiB4PSI4NzgiIHk9IjAiPjwvdXNlPgo8L2c+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE2MDQsMCkiPgogPHVzZSB4bGluazpocmVmPSIjRTEtTUpNQVRISS03OCIgeD0iMCIgeT0iMCI+PC91c2U+CiA8dXNlIHRyYW5zZm9ybT0ic2NhbGUoMC43MDcpIiB4bGluazpocmVmPSIjRTEtTUpNQUlOLTMxIiB4PSI4MDkiIHk9Ii0yMTMiPjwvdXNlPgo8L2c+CjwvZz4KPC9nPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNjIwLDApIj4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwyMTUwKSI+CiA8dXNlIHhsaW5rOmhyZWY9IiNFMS1NSk1BSU4tMkIiIHg9IjIyMiIgeT0iMCI+PC91c2U+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEyMjIsMCkiPgogPHVzZSB4bGluazpocmVmPSIjRTEtTUpNQVRISS02MSIgeD0iMCIgeT0iMCI+PC91c2U+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUyOSwtMTUwKSI+CiA8dXNlIHRyYW5zZm9ybT0ic2NhbGUoMC43MDcpIiB4bGluazpocmVmPSIjRTEtTUpNQUlOLTMxIj48L3VzZT4KIDx1c2UgdHJhbnNmb3JtPSJzY2FsZSgwLjcwNykiIHhsaW5rOmhyZWY9IiNFMS1NSk1BSU4tMzIiIHg9IjUwMCIgeT0iMCI+PC91c2U+CjwvZz4KPC9nPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNTYwLDApIj4KIDx1c2UgeGxpbms6aHJlZj0iI0UxLU1KTUFUSEktNzgiIHg9IjAiIHk9IjAiPjwvdXNlPgogPHVzZSB0cmFuc2Zvcm09InNjYWxlKDAuNzA3KSIgeGxpbms6aHJlZj0iI0UxLU1KTUFJTi0zMiIgeD0iODA5IiB5PSItMjEzIj48L3VzZT4KPC9nPgogPHVzZSB4bGluazpocmVmPSIjRTEtTUpNQUlOLTJCIiB4PSIzODA4IiB5PSIwIj48L3VzZT4KIDx1c2UgeGxpbms6aHJlZj0iI0UxLU1KTUFJTi0yMkVGIiB4PSI0ODA5IiB5PSIwIj48L3VzZT4KIDx1c2UgeGxpbms6aHJlZj0iI0UxLU1KTUFJTi0yQiIgeD0iNjIwNCIgeT0iMCI+PC91c2U+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDcyMDUsMCkiPgogPHVzZSB4bGluazpocmVmPSIjRTEtTUpNQVRISS02MSIgeD0iMCIgeT0iMCI+PC91c2U+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUyOSwtMTUwKSI+CiA8dXNlIHRyYW5zZm9ybT0ic2NhbGUoMC43MDcpIiB4bGluazpocmVmPSIjRTEtTUpNQUlOLTMxIiB4PSIwIiB5PSIwIj48L3VzZT4KIDx1c2UgdHJhbnNmb3JtPSJzY2FsZSgwLjcwNykiIHhsaW5rOmhyZWY9IiNFMS1NSk1BVEhJLTZFIiB4PSI1MDAiIHk9IjAiPjwvdXNlPgo8L2c+CjwvZz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoODYxMywwKSI+CiA8dXNlIHhsaW5rOmhyZWY9IiNFMS1NSk1BVEhJLTc4IiB4PSIwIiB5PSIwIj48L3VzZT4KIDx1c2UgdHJhbnNmb3JtPSJzY2FsZSgwLjcwNykiIHhsaW5rOmhyZWY9IiNFMS1NSk1BVEhJLTZFIiB4PSI4MDkiIHk9Ii0yMTMiPjwvdXNlPgo8L2c+CiA8dXNlIHhsaW5rOmhyZWY9IiNFMS1NSk1BSU4tM0QiIHg9Ijk5ODciIHk9IjAiPjwvdXNlPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMTA0NCwwKSI+CiA8dXNlIHhsaW5rOmhyZWY9IiNFMS1NSk1BVEhJLTYyIiB4PSIwIiB5PSIwIj48L3VzZT4KIDx1c2UgdHJhbnNmb3JtPSJzY2FsZSgwLjcwNykiIHhsaW5rOmhyZWY9IiNFMS1NSk1BSU4tMzEiIHg9IjYwNyIgeT0iLTIxMyI+PC91c2U+CjwvZz4KPC9nPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLDg1MCkiPgogPHVzZSB4bGluazpocmVmPSIjRTEtTUpNQUlOLTJCIiB4PSIyMjIiIHk9IjAiPjwvdXNlPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjIyLDApIj4KIDx1c2UgeGxpbms6aHJlZj0iI0UxLU1KTUFUSEktNjEiIHg9IjAiIHk9IjAiPjwvdXNlPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1MjksLTE1MCkiPgogPHVzZSB0cmFuc2Zvcm09InNjYWxlKDAuNzA3KSIgeGxpbms6aHJlZj0iI0UxLU1KTUFJTi0zMiI+PC91c2U+CiA8dXNlIHRyYW5zZm9ybT0ic2NhbGUoMC43MDcpIiB4bGluazpocmVmPSIjRTEtTUpNQUlOLTMyIiB4PSI1MDAiIHk9IjAiPjwvdXNlPgo8L2c+CjwvZz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjU2MCwwKSI+CiA8dXNlIHhsaW5rOmhyZWY9IiNFMS1NSk1BVEhJLTc4IiB4PSIwIiB5PSIwIj48L3VzZT4KIDx1c2UgdHJhbnNmb3JtPSJzY2FsZSgwLjcwNykiIHhsaW5rOmhyZWY9IiNFMS1NSk1BSU4tMzIiIHg9IjgwOSIgeT0iLTIxMyI+PC91c2U+CjwvZz4KIDx1c2UgeGxpbms6aHJlZj0iI0UxLU1KTUFJTi0yQiIgeD0iMzgwOCIgeT0iMCI+PC91c2U+CiA8dXNlIHhsaW5rOmhyZWY9IiNFMS1NSk1BSU4tMjJFRiIgeD0iNDgwOSIgeT0iMCI+PC91c2U+CiA8dXNlIHhsaW5rOmhyZWY9IiNFMS1NSk1BSU4tMkIiIHg9IjYyMDQiIHk9IjAiPjwvdXNlPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg3MjA1LDApIj4KIDx1c2UgeGxpbms6aHJlZj0iI0UxLU1KTUFUSEktNjEiIHg9IjAiIHk9IjAiPjwvdXNlPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1MjksLTE1MCkiPgogPHVzZSB0cmFuc2Zvcm09InNjYWxlKDAuNzA3KSIgeGxpbms6aHJlZj0iI0UxLU1KTUFJTi0zMiIgeD0iMCIgeT0iMCI+PC91c2U+CiA8dXNlIHRyYW5zZm9ybT0ic2NhbGUoMC43MDcpIiB4bGluazpocmVmPSIjRTEtTUpNQVRISS02RSIgeD0iNTAwIiB5PSIwIj48L3VzZT4KPC9nPgo8L2c+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDg2MTMsMCkiPgogPHVzZSB4bGluazpocmVmPSIjRTEtTUpNQVRISS03OCIgeD0iMCIgeT0iMCI+PC91c2U+CiA8dXNlIHRyYW5zZm9ybT0ic2NhbGUoMC43MDcpIiB4bGluazpocmVmPSIjRTEtTUpNQVRISS02RSIgeD0iODA5IiB5PSItMjEzIj48L3VzZT4KPC9nPgogPHVzZSB4bGluazpocmVmPSIjRTEtTUpNQUlOLTNEIiB4PSI5OTg3IiB5PSIwIj48L3VzZT4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTEwNDQsMCkiPgogPHVzZSB4bGluazpocmVmPSIjRTEtTUpNQVRISS02MiIgeD0iMCIgeT0iMCI+PC91c2U+CiA8dXNlIHRyYW5zZm9ybT0ic2NhbGUoMC43MDcpIiB4bGluazpocmVmPSIjRTEtTUpNQUlOLTMyIiB4PSI2MDciIHk9Ii0yMTMiPjwvdXNlPgo8L2c+CjwvZz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwtMjI1MSkiPgogPHVzZSB4bGluazpocmVmPSIjRTEtTUpNQUlOLTJCIiB4PSIyMjIiIHk9IjAiPjwvdXNlPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjIyLDApIj4KIDx1c2UgeGxpbms6aHJlZj0iI0UxLU1KTUFUSEktNjEiIHg9IjAiIHk9IjAiPjwvdXNlPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1MjksLTE1MCkiPgogPHVzZSB0cmFuc2Zvcm09InNjYWxlKDAuNzA3KSIgeGxpbms6aHJlZj0iI0UxLU1KTUFUSEktNkQiIHg9IjAiIHk9IjAiPjwvdXNlPgogPHVzZSB0cmFuc2Zvcm09InNjYWxlKDAuNzA3KSIgeGxpbms6aHJlZj0iI0UxLU1KTUFJTi0zMiIgeD0iODc4IiB5PSIwIj48L3VzZT4KPC9nPgo8L2c+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI4MjcsMCkiPgogPHVzZSB4bGluazpocmVmPSIjRTEtTUpNQVRISS03OCIgeD0iMCIgeT0iMCI+PC91c2U+CiA8dXNlIHRyYW5zZm9ybT0ic2NhbGUoMC43MDcpIiB4bGluazpocmVmPSIjRTEtTUpNQUlOLTMyIiB4PSI4MDkiIHk9Ii0yMTMiPjwvdXNlPgo8L2c+CiA8dXNlIHhsaW5rOmhyZWY9IiNFMS1NSk1BSU4tMkIiIHg9IjQwNzYiIHk9IjAiPjwvdXNlPgogPHVzZSB4bGluazpocmVmPSIjRTEtTUpNQUlOLTIyRUYiIHg9IjUwNzYiIHk9IjAiPjwvdXNlPgogPHVzZSB4bGluazpocmVmPSIjRTEtTUpNQUlOLTJCIiB4PSI2NDcxIiB5PSIwIj48L3VzZT4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNzQ3MiwwKSI+CiA8dXNlIHhsaW5rOmhyZWY9IiNFMS1NSk1BVEhJLTYxIiB4PSIwIiB5PSIwIj48L3VzZT4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTI5LC0xNTApIj4KIDx1c2UgdHJhbnNmb3JtPSJzY2FsZSgwLjcwNykiIHhsaW5rOmhyZWY9IiNFMS1NSk1BVEhJLTZEIiB4PSIwIiB5PSIwIj48L3VzZT4KIDx1c2UgdHJhbnNmb3JtPSJzY2FsZSgwLjcwNykiIHhsaW5rOmhyZWY9IiNFMS1NSk1BVEhJLTZFIiB4PSI4NzgiIHk9IjAiPjwvdXNlPgo8L2c+CjwvZz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoOTE0NywwKSI+CiA8dXNlIHhsaW5rOmhyZWY9IiNFMS1NSk1BVEhJLTc4IiB4PSIwIiB5PSIwIj48L3VzZT4KIDx1c2UgdHJhbnNmb3JtPSJzY2FsZSgwLjcwNykiIHhsaW5rOmhyZWY9IiNFMS1NSk1BVEhJLTZFIiB4PSI4MDkiIHk9Ii0yMTMiPjwvdXNlPgo8L2c+CiA8dXNlIHhsaW5rOmhyZWY9IiNFMS1NSk1BSU4tM0QiIHg9IjEwNTIyIiB5PSIwIj48L3VzZT4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTE1NzgsMCkiPgogPHVzZSB4bGluazpocmVmPSIjRTEtTUpNQVRISS02MiIgeD0iMCIgeT0iMCI+PC91c2U+CiA8dXNlIHRyYW5zZm9ybT0ic2NhbGUoMC43MDcpIiB4bGluazpocmVmPSIjRTEtTUpNQVRISS02RCIgeD0iNjA3IiB5PSItMjEzIj48L3VzZT4KPC9nPgogPHVzZSB4bGluazpocmVmPSIjRTEtTUpNQUlOLTJDIiB4PSIxMjcyOSIgeT0iMCI+PC91c2U+CjwvZz4KPC9nPgo8L2c+CjwvZz4KPC9zdmc+)</p>
+<p>Sistem persamaan linear m dengan n yang tidak diketahui dapat ditulis seperti ini:
+$<span class="math notranslate nohighlight">\(
+\begin{split}
+\begin{eqnarray*}
+a_{11}x_1 + a_{12}x_2 + \hspace{0.5cm} ... \hspace{0.5cm} + a_{1n}x_n &amp; = &amp; b_1 \\
+a_{21}x_1 + a_{22}x_2 + \hspace{0.5cm} ... \hspace{0.5cm} + a_{2n}x_n &amp; = &amp; b_2 \\
+\vdots \hspace{1.2cm} \vdots \hspace{3cm} \vdots \hspace{0.5cm}  &amp; = &amp; \vdots \\
+a_{m1}x_1 + a_{m2}x_2 + \hspace{0.5cm} ... \hspace{0.5cm} +  a_{mn}x_n &amp; = &amp; b_m \\
+\end{eqnarray*}
+\end{split}
+\)</span>$</p>
+<p>dimana:
+$<span class="math notranslate nohighlight">\( a_11,a_12,...,a_in = koefisien \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( x_1,x_2,...,x_n = perubah \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( b_1,b_2,...,b_m = konstanta\)</span>$</p>
+</section>
+<section id="solusi-penyelesaian">
+<h2>Solusi penyelesaian<a class="headerlink" href="#solusi-penyelesaian" title="Link to this heading">#</a></h2>
+<p>suatu sistem persamaan linier(SPL), dalam keterkaitannya dengan solusi, mempunyai tiga kemungkinan, yaitu:</p>
+<p>a. SPL mempunyai solusi tunggal</p>
+<p>b. SPL mempunyai solusi tak hingga banyak</p>
+<p>c. SPL tidak mempunyai solusi</p>
+<p>Masalah solusi SPL ini dapat diilustrasikan dalam diagram
+kartesius. Misalkan SPL terdiri dari dua persamaan dan dua
+peubah (x dan y). Setiap persamaan pada SPL dapat
+direpresentasikan dalam bentuk suatu garis. Suatu SPL dikatakan
+mempunyai solusi tunggal jika dua garis tersebut berpotongan di
+satu titik. Sementara itu, SPL tersebut
+dikatakan mempunyai solusi tak hingga banyak jika dua garis
+tersebut berimpit, sedangkan SPL tersebut dikatakan tidak mempunyai solusi jika dua garis tersebut tidak
+pernah berpotongan/sejajar.</p>
+<p>#Eliminasi
+Sistem persamaan linier (SPL) dapat diselesaikan menggunakan metode eliminasi dengan cara menghilangkan salah satu variabel. Metode ini dapat digunakan untuk menyelesaikan SPL dua variabel maupun tiga variabel.</p>
+</section>
+<section id="contoh">
+<h2>Contoh<a class="headerlink" href="#contoh" title="Link to this heading">#</a></h2>
+<p>Soal 1
+$<span class="math notranslate nohighlight">\(
+ 2_x +3_y=8
+ \)</span><span class="math notranslate nohighlight">\(
+ \)</span><span class="math notranslate nohighlight">\(
+ 4_x -y=5
+ \)</span>$</p>
+<p>Penyelesaian menggunakan eliminasi:</p>
+<p>a. Samakan koefisien salah satu varaiabel</p>
+<ul class="simple">
+<li><p>Kalikan persamaan tersebut dengan 3 agar koefisien y sama:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+2_x + 3_y= 8\\
+12_x - 3_y=15
+\end{split}\]</div>
+<p>b. Jumlahkan keduanya</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+92_x+3_y+(12_y-3_y) = 8+15\\
+14_x =23\\ x= 23/14
+\end{split}\]</div>
+<p>c. Subsitusi niali x ke salah satu persamaan awal</p>
+<p>menggunakan: $<span class="math notranslate nohighlight">\( 2_x+3_y = 8 \)</span>$</p>
+<div class="math notranslate nohighlight">
+\[
+2(23/14)+ 3_y=8
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+46/14 + 3_y=8\\
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+3_y=112/14-46/14\\
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+3_y=66/14\\
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+y= 22/14=11/7
+\]</div>
+<p>Hasil akhirnya adalah:</p>
+<div class="math notranslate nohighlight">
+\[
+x=23/14, y= 11/7
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y1</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">5</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">23</span><span class="o">/</span><span class="mi">14</span><span class="p">,</span> <span class="mi">11</span><span class="o">/</span><span class="mi">7</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/556834a6f2e505343c2d46530bd73b94234e60feb707edd9495900cb7cdbaa81.png" src="_images/556834a6f2e505343c2d46530bd73b94234e60feb707edd9495900cb7cdbaa81.png" />
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="eliminasi-gaussian">
+<h1>Eliminasi Gaussian<a class="headerlink" href="#eliminasi-gaussian" title="Link to this heading">#</a></h1>
+<p>merupakan algoritma yang digunakan untuk menyelesaikan sistem persamaan linier, yang terdiri dari serangkaian operasi yang dilakukan pada matriks koefisien dari sistem persamaan tersebut. yang akan berubah bantuk matriks,namun tidak akan mengubah solusi dari sistem persamaan.</p>
+<p>A. Fungsi Operasi Baris Eliminasi Gauss</p>
+<ul class="simple">
+<li><p>Row Swap
+adalah operasi dasar dalam aljabar linear yang dilakukan pada matriks. Operasi ini melibatkan pertukaran antara dua baris dalam matriks. Misalnya, jika kita memiliki matriks A dengan m baris dan n kolom, maka row swap adalah pertukaran antara dua baris i dan j dalam matriks A</p></li>
+<li><p>Row Scale
+adalah operasi dasar dalam aljabar linear yang dilakukan pada matriks. Operasi ini melibatkan perkalian setiap elemen dalam satu baris matriks dengan suatu skalar. Dengan kata lain, row scale mengalikan setiap elemen dalam satu baris dengan suatu konstanta tertentu.</p></li>
+<li><p>Row Add
+(penambahan baris) adalah operasi dasar dalam aljabar linear yang melibatkan penambahan setiap elemen dalam satu baris matriks dengan elemen yang sesuai dalam baris lain, kemudian hasilnya ditempatkan dalam baris yang sama. Operasi ini juga disebut sebagai operasi elementary row operation.</p></li>
+</ul>
+<section id="contoh-penyelesaian-menggunakan-eliminasi-gauss">
+<h2>Contoh penyelesaian menggunakan eliminasi gauss<a class="headerlink" href="#contoh-penyelesaian-menggunakan-eliminasi-gauss" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+8x_1+9x_2+x_3=19\\
+x_1+2x_2+3x_3=9\\
+2x_1+x_2+x_3=5
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">RowSwap</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">l</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Mengembalikan salinan A dengan menukar baris k dan l.&quot;&quot;&quot;</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span>
+    <span class="n">B</span><span class="p">[[</span><span class="n">k</span><span class="p">,</span> <span class="n">l</span><span class="p">]]</span> <span class="o">=</span> <span class="n">B</span><span class="p">[[</span><span class="n">l</span><span class="p">,</span> <span class="n">k</span><span class="p">]]</span>
+    <span class="k">return</span> <span class="n">B</span>
+
+<span class="k">def</span> <span class="nf">RowScale</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">scale</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Mengembalikan salinan A dengan baris k dikali scale.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">scale</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Scale tidak boleh nol.&quot;</span><span class="p">)</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span>
+    <span class="n">B</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">*=</span> <span class="n">scale</span>
+    <span class="k">return</span> <span class="n">B</span>
+
+<span class="k">def</span> <span class="nf">RowAdd</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">scale</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Mengembalikan salinan A dengan baris l ditambah scale * baris k.&quot;&quot;&quot;</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span>
+    <span class="n">B</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">+=</span> <span class="n">scale</span> <span class="o">*</span> <span class="n">B</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">B</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>penyelesaian</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">A</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">19</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">9</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 8  9  1 19]
+ [ 1  2  3  9]
+ [ 2  1  1  5]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation*}
+A=
+\begin{bmatrix}
+8&amp;9&amp;1&amp;19\\
+1&amp;2&amp;3&amp;9\\2&amp;1&amp;1&amp;5
+\end{bmatrix}
+\end{equation*}
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A1</span> <span class="o">=</span> <span class="n">RowSwap</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A1</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1.  2.  3.  9.]
+ [ 8.  9.  1. 19.]
+ [ 2.  1.  1.  5.]] 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation*}
+A1=
+\begin{bmatrix}
+1&amp;2&amp;3&amp;9\\
+8&amp;9&amp;1&amp;19\\2&amp;1&amp;1&amp;5
+\end{bmatrix}
+\end{equation*}
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A2</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[  1.   2.   3.   9.]
+ [  0.  -7. -23. -53.]
+ [  2.   1.   1.   5.]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation*}
+A2=
+\begin{bmatrix}
+1&amp;2&amp;3&amp;9\\
+0&amp;-7&amp;-23&amp;-53\\2&amp;1&amp;1&amp;5
+\end{bmatrix}
+\end{equation*}
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A3</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[  1.   2.   3.   9.]
+ [  0.  -7. -23. -53.]
+ [  0.  -3.  -5. -13.]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation*}
+A3=
+\begin{bmatrix}
+1&amp;2&amp;3&amp;9\\
+0&amp;-7&amp;-23&amp;-53\\0&amp;-3&amp;-5&amp;-13
+\end{bmatrix}
+\end{equation*}
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A4</span> <span class="o">=</span> <span class="n">RowScale</span><span class="p">(</span><span class="n">A3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">7</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[  1.           2.           3.           9.        ]
+ [ -0.           1.           3.28571429   7.57142857]
+ [  0.          -3.          -5.         -13.        ]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation*}
+A4=
+\begin{bmatrix}
+1&amp;2&amp;3&amp;9\\
+-0&amp;1&amp;3.28571429&amp;7.57142857\\0&amp;-3&amp;-5&amp;-13:
+\end{bmatrix}
+\end{equation*}
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A5</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1.          2.          3.          9.        ]
+ [-0.          1.          3.28571429  7.57142857]
+ [ 0.          0.          4.85714286  9.71428571]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation*}
+A4=
+\begin{bmatrix}
+1&amp;2&amp;3&amp;9\\
+-0&amp;1&amp;3.28571429&amp;7.57142857\\0&amp;-3&amp;4.85714286&amp;9.71428571
+\end{bmatrix}
+\end{equation*}
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A6</span> <span class="o">=</span> <span class="n">RowScale</span><span class="p">(</span><span class="n">A5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1.          2.          3.          9.        ]
+ [-0.          1.          3.28571429  7.57142857]
+ [ 0.          0.          1.21428571  2.42857143]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation*}
+A4=
+\begin{bmatrix}
+1&amp;2&amp;3&amp;9\\
+-0&amp;1&amp;3.28571429&amp;7.57142857\\0&amp;0&amp;1.21428571&amp;2.42857143
+\end{bmatrix}
+\end{equation*}
+\end{split}\]</div>
+<p>selanjutnya, mengubahnya menjadi sistem persamaan linear</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+x_1+2x_2+3x_3= 9x_2+3.28571429x_3+ 7.57142857x_3= 2\\
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#selesaikan persamaanya</span>
+<span class="n">x3</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x3:&#39;</span><span class="p">,</span> <span class="n">x3</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="mf">7.57142857</span><span class="o">-</span><span class="p">(</span><span class="mf">3.28571429</span><span class="o">*</span><span class="n">x3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x2:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">x2</span><span class="p">))</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="mi">9</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">x2</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x3</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x1:&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">x1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x3: 2
+x2: 1
+x1: 1
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="persamaan-bidang-dalam-ruang-3d">
+<h2>Persamaan Bidang Dalam Ruang 3D<a class="headerlink" href="#persamaan-bidang-dalam-ruang-3d" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+
+<span class="c1"># Koefisien untuk masing-masing persamaan bidang</span>
+<span class="n">a1</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">r1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span>
+<span class="n">a2</span><span class="p">,</span> <span class="n">b2</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">r2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">27</span>
+<span class="n">a3</span><span class="p">,</span> <span class="n">b3</span><span class="p">,</span> <span class="n">c3</span><span class="p">,</span> <span class="n">r3</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>
+
+<span class="c1"># Buat data x, y</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Buat grid x, y</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># Hitung nilai z sesuai dengan persamaan bidang</span>
+<span class="n">Z1</span> <span class="o">=</span> <span class="p">(</span><span class="n">r1</span> <span class="o">-</span> <span class="n">a1</span><span class="o">*</span><span class="n">X</span> <span class="o">-</span> <span class="n">b1</span><span class="o">*</span><span class="n">Y</span><span class="p">)</span> <span class="o">/</span> <span class="n">c1</span>
+<span class="n">Z2</span> <span class="o">=</span> <span class="p">(</span><span class="n">r2</span> <span class="o">-</span> <span class="n">a2</span><span class="o">*</span><span class="n">X</span> <span class="o">-</span> <span class="n">b2</span><span class="o">*</span><span class="n">Y</span><span class="p">)</span> <span class="o">/</span> <span class="n">c2</span>
+<span class="n">Z3</span> <span class="o">=</span> <span class="p">(</span><span class="n">r3</span> <span class="o">-</span> <span class="n">a3</span><span class="o">*</span><span class="n">X</span> <span class="o">-</span> <span class="n">b3</span><span class="o">*</span><span class="n">Y</span><span class="p">)</span> <span class="o">/</span> <span class="n">c3</span>
+
+<span class="c1"># Plot persamaan bidang dalam tiga dimensi</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot bidang</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">rstride</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">cstride</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">rstride</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">cstride</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z3</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">rstride</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">cstride</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+
+<span class="c1"># Titik perpotongan</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">a1</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">c1</span><span class="p">],</span> <span class="p">[</span><span class="n">a2</span><span class="p">,</span> <span class="n">b2</span><span class="p">,</span> <span class="n">c2</span><span class="p">],</span> <span class="p">[</span><span class="n">a3</span><span class="p">,</span> <span class="n">b3</span><span class="p">,</span> <span class="n">c3</span><span class="p">]])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="n">r3</span><span class="p">])</span>
+<span class="n">intersect</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">intersect</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">intersect</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">intersect</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Titik Perpotongan&#39;</span><span class="p">)</span>
+
+<span class="c1"># Label sumbu</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="s1">&#39;Z&#39;</span><span class="p">)</span>
+
+<span class="c1"># Tampilkan legenda</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="c1"># Tampilkan plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/4d982d9ee9818f192e0c3f317ae8545ce185d4aa6245b128fe882b3f9ec04179.png" src="_images/4d982d9ee9818f192e0c3f317ae8545ce185d4aa6245b128fe882b3f9ec04179.png" />
+</div>
+</div>
 </section>
 </section>
 
@@ -473,10 +901,21 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Sistem Persamaan Linier</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian">Pengertian</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jenis-jenis">Jenis-jenis</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bentuk-umum">Bentuk umum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-penyelesaian">Solusi penyelesaian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh">Contoh</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-gaussian">Eliminasi Gaussian</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-penyelesaian-menggunakan-eliminasi-gauss">Contoh penyelesaian menggunakan eliminasi gauss</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persamaan-bidang-dalam-ruang-3d">Persamaan Bidang Dalam Ruang 3D</a></li>
+</ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
