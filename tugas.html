@@ -183,6 +183,8 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Sistem Persamaan Linier</a></li>
 
+
+
 </ul>
 
     </div>
@@ -389,6 +391,12 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-gaussian">Eliminasi Gaussian</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-penyelesaian-menggunakan-eliminasi-gauss">Contoh penyelesaian menggunakan eliminasi gauss</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persamaan-bidang-dalam-ruang-3d">Persamaan Bidang Dalam Ruang 3D</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tugass-2">TUGASS 2</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-sistem-persamaan-linier">Penyelesaian Sistem Persamaan Linier</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-baris-elementer">operasi baris elementer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-gauss">Eliminasi Gauss</a></li>
 </ul>
 </li>
 </ul>
@@ -851,6 +859,105 @@ x1: 1
 </div>
 </section>
 </section>
+<section class="tex2jax_ignore mathjax_ignore" id="tugass-2">
+<h1>TUGASS 2<a class="headerlink" href="#tugass-2" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="penyelesaian-sistem-persamaan-linier">
+<h1>Penyelesaian Sistem Persamaan Linier<a class="headerlink" href="#penyelesaian-sistem-persamaan-linier" title="Link to this heading">#</a></h1>
+<section id="operasi-baris-elementer">
+<h2>operasi baris elementer<a class="headerlink" href="#operasi-baris-elementer" title="Link to this heading">#</a></h2>
+</section>
+<section id="eliminasi-gauss">
+<h2>Eliminasi Gauss<a class="headerlink" href="#eliminasi-gauss" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Contoh soal 1
+Selesaikan menggunakan eliminasi gauss
+$<span class="math notranslate nohighlight">\(
+\begin{array}{cc}
+2x_1 + 2x_2= 4\\
+x_1+x_2=2\\
+\end{array}
+\)</span>$
+Penyelesaian:
+\begin{equation*}
+\begin{bmatrix}
+2&amp;2&amp;|4\
+1&amp;1&amp;|2
+\end{bmatrix}
+\end{equation*}
+\begin{equation*}
+\begin{bmatrix}
+2&amp;2&amp;4\
+0&amp;0&amp;0
+\end{bmatrix}
+\end{equation*}
+berarti penyelesaian memiliki banyak solusi
+misalkan: \begin{array}{cc} x_1=t \end{array}
+jadi hasil akhirnya adalah
+\begin{array}{cc}
+x_1+x_2=2\
+x=2- t
+\end{array}
+keterangan t merupakan parameter bebas.</p>
+<hr class="docutils" />
+<p>Contoh soal 2
+Selesaikan menggunakan eliminasi gauss
+$<span class="math notranslate nohighlight">\(
+\begin{array}{cc}
+x_1+x_2+x_3=3\\
+2x_1+x_3=5\\
+x_1+2x_2=3\\
+\end{array}
+\)</span>$
+penyelesaian:</p>
+<p>Contoh soal 3
+\begin{array}{cc}
+x_1 +2x_2+3x-3=6\
+2x_1+4x_2+6x_3=12\
+x_3+x_2=2
+\end{array}
+Penyelesaian:
+\begin{equation*}
+\begin{bmatrix}
+1&amp;2&amp;3&amp;|6\
+2&amp;4&amp;6&amp;|12\
+0&amp;1&amp;1&amp;|2
+\end{bmatrix}
+\end{equation*}</p>
+<p>\begin{equation*}
+\begin{bmatrix}
+1&amp;2&amp;3&amp;|6\
+0&amp;0&amp;0&amp;0\
+0&amp;1&amp;1&amp;|2
+\end{bmatrix}
+\end{equation*}
+hanya tersisa
+\begin{equation*}
+\begin{bmatrix}
+1&amp;2&amp;3&amp;|6\
+0&amp;1&amp;1&amp;|2
+\end{bmatrix}
+\end{equation*}
+subsitasi balik
+baris pertama:
+\begin{array}{cc}
+x_2+x_3=2\
+x_2=2-x_3
+\end{array}</p>
+<p>baris kedua:
+\begin{array}{cc}
+x_1+2x_1+3x_3=6
+\end{array}
+\begin{array}{cc}</p>
+<p>Contoh soal 4
+Selesaikan menggunakan eliminasi Gauss
+\begin{array}{cc}
+x_1+x_2=5\
+x_1+2x_3=6
+\end{array}</p>
+<p>\begin{array}{cc}</p>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -918,6 +1025,12 @@ x1: 1
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-gaussian">Eliminasi Gaussian</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-penyelesaian-menggunakan-eliminasi-gauss">Contoh penyelesaian menggunakan eliminasi gauss</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persamaan-bidang-dalam-ruang-3d">Persamaan Bidang Dalam Ruang 3D</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tugass-2">TUGASS 2</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-sistem-persamaan-linier">Penyelesaian Sistem Persamaan Linier</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-baris-elementer">operasi baris elementer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-gauss">Eliminasi Gauss</a></li>
 </ul>
 </li>
 </ul>
