@@ -184,7 +184,6 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Sistem Persamaan Linier</a></li>
 
 
-
 </ul>
 
     </div>
@@ -389,13 +388,13 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-gaussian">Eliminasi Gaussian</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-baris-elementer">Operasi Baris Elementer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah-eliminasi-gauss">Langkah-langkah Eliminasi Gauss</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-penyelesaian-menggunakan-eliminasi-gauss">Contoh penyelesaian menggunakan eliminasi gauss</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persamaan-bidang-dalam-ruang-3d">Persamaan Bidang Dalam Ruang 3D</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tugass-2">TUGASS 2</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-sistem-persamaan-linier">Penyelesaian Sistem Persamaan Linier</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-baris-elementer">operasi baris elementer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-gauss">Eliminasi Gauss</a></li>
 </ul>
 </li>
@@ -553,7 +552,8 @@ x=23/14, y= 11/7
 <section class="tex2jax_ignore mathjax_ignore" id="eliminasi-gaussian">
 <h1>Eliminasi Gaussian<a class="headerlink" href="#eliminasi-gaussian" title="Link to this heading">#</a></h1>
 <p>merupakan algoritma yang digunakan untuk menyelesaikan sistem persamaan linier, yang terdiri dari serangkaian operasi yang dilakukan pada matriks koefisien dari sistem persamaan tersebut. yang akan berubah bantuk matriks,namun tidak akan mengubah solusi dari sistem persamaan.</p>
-<p>A. Fungsi Operasi Baris Eliminasi Gauss</p>
+<section id="operasi-baris-elementer">
+<h2>Operasi Baris Elementer<a class="headerlink" href="#operasi-baris-elementer" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Row Swap
 adalah operasi dasar dalam aljabar linear yang dilakukan pada matriks. Operasi ini melibatkan pertukaran antara dua baris dalam matriks. Misalnya, jika kita memiliki matriks A dengan m baris dan n kolom, maka row swap adalah pertukaran antara dua baris i dan j dalam matriks A</p></li>
@@ -562,6 +562,24 @@ adalah operasi dasar dalam aljabar linear yang dilakukan pada matriks. Operasi i
 <li><p>Row Add
 (penambahan baris) adalah operasi dasar dalam aljabar linear yang melibatkan penambahan setiap elemen dalam satu baris matriks dengan elemen yang sesuai dalam baris lain, kemudian hasilnya ditempatkan dalam baris yang sama. Operasi ini juga disebut sebagai operasi elementary row operation.</p></li>
 </ul>
+</section>
+<section id="langkah-langkah-eliminasi-gauss">
+<h2>Langkah-langkah Eliminasi Gauss<a class="headerlink" href="#langkah-langkah-eliminasi-gauss" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Tulis Matriks Augmentasi<br />
+Ubah SPL menjadi matriks augmentasi.</p></li>
+<li><p>Bentuk Eselon Baris<br />
+Gunakan Operasi Baris Elementer (OBE) untuk menghasilkan bentuk eselon baris:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Elemen pivot (elemen pertama non-nol pada suatu baris) harus berada di kanan elemen pivot baris sebelumnya.</p></li>
+<li><p>Baris nol (jika ada) berada di bawah baris non-nol.</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>Substitusi Balik<br />
+Setelah matriks dalam bentuk eselon baris, lakukan substitusi balik untuk menemukan nilai variabel</p></li>
+</ol>
+</section>
 <section id="contoh-penyelesaian-menggunakan-eliminasi-gauss">
 <h2>Contoh penyelesaian menggunakan eliminasi gauss<a class="headerlink" href="#contoh-penyelesaian-menggunakan-eliminasi-gauss" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
@@ -859,19 +877,15 @@ x1: 1
 </div>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="tugass-2">
-<h1>TUGASS 2<a class="headerlink" href="#tugass-2" title="Link to this heading">#</a></h1>
-</section>
 <section class="tex2jax_ignore mathjax_ignore" id="penyelesaian-sistem-persamaan-linier">
 <h1>Penyelesaian Sistem Persamaan Linier<a class="headerlink" href="#penyelesaian-sistem-persamaan-linier" title="Link to this heading">#</a></h1>
-<section id="operasi-baris-elementer">
-<h2>operasi baris elementer<a class="headerlink" href="#operasi-baris-elementer" title="Link to this heading">#</a></h2>
-</section>
 <section id="eliminasi-gauss">
 <h2>Eliminasi Gauss<a class="headerlink" href="#eliminasi-gauss" title="Link to this heading">#</a></h2>
 <hr class="docutils" />
-<p>Contoh soal 1
-Selesaikan menggunakan eliminasi gauss</p>
+<ol class="arabic simple">
+<li><p>Contoh soal 1
+Selesaikan menggunakan eliminasi gauss</p></li>
+</ol>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{cc}
@@ -913,9 +927,10 @@ x=2- t
 \end{array}
 \end{split}\]</div>
 <p>keterangan t merupakan parameter bebas.</p>
-<hr class="docutils" />
-<p>Contoh soal 2
-Selesaikan menggunakan eliminasi gauss</p>
+<ol class="arabic simple" start="2">
+<li><p>Contoh soal 2
+Selesaikan menggunakan eliminasi gauss</p></li>
+</ol>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{cc}
@@ -925,7 +940,76 @@ x_1+2x_2=3\\
 \end{array}
 \end{split}\]</div>
 <p>penyelesaian:</p>
-<p>Contoh soal 3</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation*}
+\begin{bmatrix}
+1&amp;1&amp;1&amp;|3\\
+2&amp;0&amp;1&amp;|5\\
+1&amp;2&amp;0&amp;|3
+\end{bmatrix}
+\end{equation*}
+\end{split}\]</div>
+<p>eliminasi baris kedua dan ketiga</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation*}
+\begin{bmatrix}
+1&amp;1&amp;1&amp;|3\\
+0&amp;-2&amp;-1&amp;|-1\\
+0&amp;1&amp;-1&amp;|0
+\end{bmatrix}
+\end{equation*}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation*}
+\begin{bmatrix}
+1&amp;1&amp;1&amp;|3\\
+0&amp;-2&amp;-1&amp;|-1\\
+0&amp;0&amp;-\frac{3}{2}&amp;|-\frac{1}{2}
+\end{bmatrix}
+\end{equation*}
+\end{split}\]</div>
+<p>Subsitusi Balik<br />
+baris terkahir:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{cc}
+x_1=-\frac{3}{2}\\
+x_3=-\frac{1}{2}\\
+x_3=\frac{1}{3}\\
+\end{array}
+\end{split}\]</div>
+<p>baris kedua:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{cc}
+-2x_2-x_3\\
+-2x_2-\frac{1}{3}=-1\\
+-2x_2=-1+\frac{1}{3}=-\frac{2}{3}\\
+x_2=\frac{1}{3}
+\end{array}
+\end{split}\]</div>
+<p>baris pertama:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{cc}
+x_1 +x_2+x_3=3\\
+x_1+\frac{1}{3}+\frac{1}{3}=3\\
+x_1=3-\frac{2}{3}=\frac{7}{3}
+\end{array}
+\end{split}\]</div>
+<p>solusi akhir</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{array}{cc}
+x_1 =\frac{7}{3}, x_2=\frac{1}{3},x_3=\frac{1}{2}
+\end{array}
+\]</div>
+<ol class="arabic simple" start="3">
+<li><p>Contoh soal 3</p></li>
+</ol>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{cc}
@@ -985,7 +1069,9 @@ x_2=2-x_3
 x_1+2x_1+3x_3=6
 \end{array}
 \]</div>
-<p>Contoh soal 4</p>
+<ol class="arabic simple" start="4">
+<li><p>Contoh soal 4</p></li>
+</ol>
 <p>Selesaikan menggunakan eliminasi Gauss</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1061,13 +1147,13 @@ x_1+2x_3=6
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-gaussian">Eliminasi Gaussian</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-baris-elementer">Operasi Baris Elementer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah-eliminasi-gauss">Langkah-langkah Eliminasi Gauss</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-penyelesaian-menggunakan-eliminasi-gauss">Contoh penyelesaian menggunakan eliminasi gauss</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persamaan-bidang-dalam-ruang-3d">Persamaan Bidang Dalam Ruang 3D</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tugass-2">TUGASS 2</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-sistem-persamaan-linier">Penyelesaian Sistem Persamaan Linier</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-baris-elementer">operasi baris elementer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-gauss">Eliminasi Gauss</a></li>
 </ul>
 </li>
