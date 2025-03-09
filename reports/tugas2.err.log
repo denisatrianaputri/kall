@@ -1,0 +1,198 @@
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/usr/local/lib/python3.11/dist-packages/nbclient/client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/usr/local/lib/python3.11/dist-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/usr/local/lib/python3.11/dist-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+3. Contoh soal 3
+
+$$
+\begin{array}{cc}
+x_1 +2x_2+3x_3=6\\
+2x_1+4x_2+6x_3=12\\
+x_3+x_2=2
+\end{array}
+$$
+
+Penyelesaian:
+
+$$
+\begin{equation*}
+\begin{bmatrix}
+1&2&3&|6\\
+2&4&6&|12\\
+0&1&1&|2
+\end{bmatrix}
+\end{equation*}
+$$
+
+$$
+\begin{equation*}
+\begin{bmatrix}
+1&2&3&|6\\
+0&0&0&0\\
+0&1&1&|2
+\end{bmatrix}
+\end{equation*}
+$$
+
+hanya tersisa
+
+$$
+\begin{equation*}
+\begin{bmatrix}
+1&2&3&|6\\
+0&1&1&|2
+\end{bmatrix}
+\end{equation*}
+$$
+subsitasi balik
+
+* baris pertama:
+
+$$
+\begin{array}{cc}
+x_2+x_3=2\\
+x_2=2-x_3
+\end{array}
+$$
+* baris kedua:
+
+$$
+\begin{array}{cc}
+x_1+2x_1+3x_3=6
+\end{array}
+$$
+
+
+Solusi umum dari sistem ini adalah:
+
+$$
+\begin{aligned}
+x_1 & = 2 - x _ 3 \\
+x_2 & = 2 - x _ 3 \\
+x_3 & = x_3
+\end{aligned}
+$$
+
+
+4. Contoh soal 4
+
+Selesaikan menggunakan eliminasi Gauss
+
+$$
+\begin{array}{cc}
+x_1+x_2=5\\
+x_1+2x_3=6
+\end{array}
+$$
+
+Penyelesaian
+1. Tulis sistem persamaan dalam bentuk matriks augmented:
+
+$$
+\begin{bmatrix}
+1&1&0&|&5\\
+1&0&2&|&4
+\end{bmatrix}
+$$
+
+2. Lakukan operasi baris untuk mendapatkan bentuk eselon baris:
+
+
+$$
+\begin{array}{cc}
+R_2 \rightarrow R_2
+\end{array}
+$$
+Hasilnya :
+
+
+$$
+\begin{bmatrix}
+1&1&0&|&5\\
+0&-1&2&|&-1
+\end{bmatrix}
+$$
+
+$$
+\begin{array}{cc}
+R_2 \rightarrow \frac{R_2}{-1}
+\end{array}
+$$
+Hasilnya :
+
+
+$$
+\begin{bmatrix}
+1&1&0&|&5\\
+0&1&-2&|&1
+\end{bmatrix}
+$$
+
+
+3. Lakukan substitusi mundur untuk menemukan solusi:
+
+- Dari baris 2:
+
+$$
+\begin{array}{cc}
+x_1 + x_2 = 2 \Rightarrow x_1 = 2 - x_2
+\end{array}
+$$
+
+
+- Dari baris 1:
+
+
+$$
+\begin{array}{cc}
+x_1 + x_2 = 5 \implies x_1 + (1 + 2x_3) = 5 \implies x_1 = 4 - 2x_3
+\end{array}
+$$
+4. Solusi Akhir:
+
+
+$$
+\begin{aligned}
+x_1&=4-2x_3\\
+x_2&=1+2x_3\\
+x_3&=x_3
+\end{aligned}
+$$
+
+Jadi, solusi dari sistem persamaan adalah:
+
+
+$$
+\begin{array}{cc}
+\left(x_1, x_2, x_3\right) = \left(4 - 2t, 1 + 2t, t\right), \quad t \in \mathbb{R}
+\end{array}
+$$
+
+
+Sistem ini memiliki banyak solusi karena terdapat parameter bebas $( t )$.
+
+------------------
+
+
+[0;36m  File [0;32m"<ipython-input-1-cc86b8f86ae7>"[0;36m, line [0;32m1[0m
+[0;31m    3. Contoh soal 3[0m
+[0m       ^[0m
+[0;31mSyntaxError[0m[0;31m:[0m invalid syntax
+
+
