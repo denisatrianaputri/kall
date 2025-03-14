@@ -636,8 +636,12 @@ x_1+4x_3=5
 <p>Selesaikan menggunakan invers matrik, kemudian invers dicari menggunakan OBE</p>
 <p>Penyelesaian:\</p>
 <ol class="arabic simple">
-<li><p>Tulis dalam bentuk matrik $<span class="math notranslate nohighlight">\( Ax=b\)</span><span class="math notranslate nohighlight">\(\
-\)</span><span class="math notranslate nohighlight">\(
+<li><p>Tulis dalam bentuk matrik</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[Ax=b\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{equation*}
 A=
 \begin{bmatrix}
@@ -652,10 +656,14 @@ b=
 5
 \end{bmatrix}
 \end{equation*}
-\)</span>$</p></li>
-<li><p>menyusun matrik argumen, menubah bagian kiri menjadi matrtik I segingga bagian kanan berubah menjdi A invers.
-$<span class="math notranslate nohighlight">\([A][I]\)</span><span class="math notranslate nohighlight">\(\
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<ol class="arabic simple" start="2">
+<li><p>menyusun matrik argumen, menubah bagian kiri menjadi matrtik I segingga bagian kanan berubah menjdi A invers.</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[[A][I]\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{equation*}
 \begin{bmatrix}
 -7&amp;-6&amp;-12 |1&amp;0&amp;0\\
@@ -663,7 +671,8 @@ $<span class="math notranslate nohighlight">\([A][I]\)</span><span class="math n
 1&amp;0&amp;4 |0&amp;0&amp;1
 \end{bmatrix}
 \end{equation*}
-\)</span>$</p></li>
+\end{split}\]</div>
+<ol class="arabic simple" start="3">
 <li><p>bagi baris pertama dengan -7, agar elemen (1,1) menjadi 1</p></li>
 </ol>
 <div class="math notranslate nohighlight">
@@ -697,22 +706,25 @@ $<span class="math notranslate nohighlight">\([A][I]\)</span><span class="math n
 <li><p>ubah elemen (2,2) menjadi 1, dengan cara baris kedua di bagi 5/7</p></li>
 </ol>
 <div class="math notranslate nohighlight">
-\[R_2 &lt;-R_2 \times \frac{7}{5}$$\
-\]</div>
-<p>\begin{equation*}
+\[R_2 &lt;-R_2 \times \frac{7}{5}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation*}
 \begin{bmatrix}
-1&amp;\frac{6}{7}&amp;-\frac{12}{7} |-\frac{1}{7}&amp;0&amp;0\
-0&amp;1&amp;-\frac{13}{5}|\frac{1}{5}&amp;\frac{7}{5}&amp;0\
+1&amp;\frac{6}{7}&amp;-\frac{12}{7} |-\frac{1}{7}&amp;0&amp;0\\
+0&amp;1&amp;-\frac{13}{5}|\frac{1}{5}&amp;\frac{7}{5}&amp;0\\
 0&amp;-\frac{6}{7}&amp;\frac{16}{7} |\frac{1}{7}&amp;0&amp;1
 \end{bmatrix}
 \end{equation*}
-$$</p>
+\end{split}\]</div>
 <ol class="arabic simple" start="6">
 <li><p>nol kan elemen di atas dan bawah (2,2)
-menggunakan operasi:
-$<span class="math notranslate nohighlight">\(R_1&lt;-R_1-\frac{6}{7}R_2\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(R_3&lt;-R_3-\frac{6}{7}R_2\)</span>$</p></li>
+menggunakan operasi:</p></li>
 </ol>
+<div class="math notranslate nohighlight">
+\[R_1&lt;-R_1-\frac{6}{7}R_2\]</div>
+<div class="math notranslate nohighlight">
+\[R_3&lt;-R_3-\frac{6}{7}R_2\]</div>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{equation*}
@@ -744,18 +756,19 @@ $<span class="math notranslate nohighlight">\(R_1&lt;-R_1-\frac{6}{7}R_2\)</span
 <div class="math notranslate nohighlight">
 \[R_1 &lt;-R_1-\frac{102}{35}R_3\]</div>
 <div class="math notranslate nohighlight">
-\[R_2 &lt;-R_2+\frac{13}{5}R_3$$\
-dipeoleh inversnya yaitu:
-\]</div>
-<p>\begin{equation*}
+\[R_2 &lt;-R_2+\frac{13}{5}R_3\]</div>
+<p>dipeoleh inversnya yaitu:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation*}
 A^{-1} =
 \begin{bmatrix}
-\frac{26}{35} &amp; \frac{102}{65} &amp; \frac{102}{91} \
--\frac{7}{5} &amp; \frac{13}{5} &amp; -\frac{35}{26} \
+\frac{26}{35} &amp; \frac{102}{65} &amp; \frac{102}{91} \\
+-\frac{7}{5} &amp; \frac{13}{5} &amp; -\frac{35}{26} \\
 -\frac{13}{26} &amp; -\frac{42}{26} &amp; \frac{35}{26}
 \end{bmatrix}
 \end{equation*}
-$$</p>
+\end{split}\]</div>
 <ol class="arabic simple" start="9">
 <li><p>kalikan A invers dengan b</p></li>
 </ol>
