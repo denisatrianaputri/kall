@@ -391,6 +391,29 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perkalian">Perkalian</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-menggunkan-invers-matrik-invers-di-cari-menggunakan-obe">penyelesaian menggunkan invers matrik,invers di cari menggunakan obe</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal">Soal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-determinan">Matriks Determinan</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh">contoh:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-sarrus-hanya-untuk-matriks-a-berukuran-3-times-3">Metode Sarrus (hanya untuk matriks ( A ) berukuran <span class="math notranslate nohighlight">\(( 3 \times 3 )\)</span>:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-determinan">Sifat sifat Determinan</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#determinan-matriks-identitas">1. Determinan matriks identitas</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#baris-atau-kolom-nol">2. Baris atau kolom nol</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pertukaran-baris-kolom">3. Pertukaran baris/kolom</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kelipatan-baris-kolom">4. Kelipatan baris/kolom</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-singular">5. Matriks Singular</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apa-itu-minor-dan-cofaktor">Apa itu Minor dan Cofaktor?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minor-matriks">Minor matriks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cofaktor-matriks">Cofaktor Matriks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hubungan-minor-dan-cofaktor-dengan-determinan">hubungan Minor dan Cofaktor dengan Determinan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-perhitungan-determinan">Contoh Perhitungan Determinan</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-determinan-matriks-33">1. Contoh Determinan Matriks 3×3</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-determinan-matriks-44">2. Contoh Determinan Matriks 4×4</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-determinan-matriks-55">3. Contoh Determinan Matriks 5×5</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -798,6 +821,270 @@ x_3
 <div class="math notranslate nohighlight">
 \[x_1=-1, x_2=4, x_3=2\]</div>
 </section>
+<section id="matriks-determinan">
+<h2>Matriks Determinan<a class="headerlink" href="#matriks-determinan" title="Link to this heading">#</a></h2>
+<p>Matriks determinan adalah matriks yang baris dan kolomnyaa samaa. Determinan adalah fungsi yang mengaitkan suatu matriks persegi A dengan sebuah bilangan real (skalar).
+Determinan matriks A ditulis sebagai Det(A) atau [A]</p>
+<p>A = <span class="math notranslate nohighlight">\(\begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix}\)</span> det(A) =ad-bc</p>
+<section id="contoh">
+<h3>contoh:<a class="headerlink" href="#contoh" title="Link to this heading">#</a></h3>
+<p>A = <span class="math notranslate nohighlight">\(\begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{bmatrix}\)</span> det(A) = (1.4)- (2.3)= 4-6= -2</p>
+</section>
+<section id="metode-sarrus-hanya-untuk-matriks-a-berukuran-3-times-3">
+<h3>Metode Sarrus (hanya untuk matriks ( A ) berukuran <span class="math notranslate nohighlight">\(( 3 \times 3 )\)</span>:<a class="headerlink" href="#metode-sarrus-hanya-untuk-matriks-a-berukuran-3-times-3" title="Link to this heading">#</a></h3>
+<p>Metode ini hanya berlaku untuk matriks berukuran <span class="math notranslate nohighlight">\( 3\times 3\)</span>
+langkah langhkah:</p>
+<ol class="arabic simple">
+<li><p>Tuliskan ulang dua kolom pertama di sebelah kanan matriks.</p></li>
+<li><p>Jumlahkan hasil perkalian diagonal utama, lalu kurangi hasil perkalian diagnal sekunder.
+<em>rumus:</em>
+det ( A )= (<span class="math notranslate nohighlight">\(\begin{pmatrix} a_{11} &amp; a_{22} &amp; a_{33}+a_{12} &amp; a_{23} &amp; a_{31}+a_{13} &amp; a_{21} &amp; a_{32})-(a_{13} &amp; a_{22} &amp; a_{31}+a_{11} &amp; a_{23} &amp; a_{32}+a_{12} &amp; a_{21} &amp; a_{33}\end{pmatrix}
+contoh:
+A = \)</span>\begin{bmatrix} 1 &amp; 2 &amp; 3 \ 4 &amp; 5 &amp; 6 \ 7 &amp; 8 &amp; 9 \end{bmatrix}</p></li>
+</ol>
+</section>
+<section id="sifat-sifat-determinan">
+<h3>Sifat sifat Determinan<a class="headerlink" href="#sifat-sifat-determinan" title="Link to this heading">#</a></h3>
+<p>Sifat penting determinan:</p>
+<section id="determinan-matriks-identitas">
+<h4>1. Determinan matriks identitas<a class="headerlink" href="#determinan-matriks-identitas" title="Link to this heading">#</a></h4>
+<p>det( I )= 1, dimana I adalah matriks identitas</p>
+</section>
+<section id="baris-atau-kolom-nol">
+<h4>2. Baris atau kolom nol<a class="headerlink" href="#baris-atau-kolom-nol" title="Link to this heading">#</a></h4>
+<p>Jika ada baris atau kolom yang semuanya nol, maka det( A )= 0</p>
+</section>
+<section id="pertukaran-baris-kolom">
+<h4>3. Pertukaran baris/kolom<a class="headerlink" href="#pertukaran-baris-kolom" title="Link to this heading">#</a></h4>
+<p>Jika dua baris atau kolom dipertukarkan, determinan berubah tanda</p>
+</section>
+<section id="kelipatan-baris-kolom">
+<h4>4. Kelipatan baris/kolom<a class="headerlink" href="#kelipatan-baris-kolom" title="Link to this heading">#</a></h4>
+<p>Jika satu baris atau kolom dikalikan dengan skalar k, maka determinan menjadi k det(A)</p>
+</section>
+<section id="matriks-singular">
+<h4>5. Matriks Singular<a class="headerlink" href="#matriks-singular" title="Link to this heading">#</a></h4>
+<p>Jika det(A) = 0, maka matriks A disebut singular (tidak memimiliki invers)</p>
+</section>
+</section>
+<section id="apa-itu-minor-dan-cofaktor">
+<h3>Apa itu Minor dan Cofaktor?<a class="headerlink" href="#apa-itu-minor-dan-cofaktor" title="Link to this heading">#</a></h3>
+<p><em>- Minor:</em> Nilai determinan submatriks yang diperoleh dengan menghapus baris dan kolom tertentu dari matriks.
+<em>- Cofktor</em>: hasil perka lian minor dengan faktor tanda <span class="math notranslate nohighlight">\((-1)^{i+j}\)</span>
+dimana i adalah indeks baris dan j adalah indeks kolom.</p>
+</section>
+<section id="minor-matriks">
+<h3>Minor matriks<a class="headerlink" href="#minor-matriks" title="Link to this heading">#</a></h3>
+<p>Minor elemen <span class="math notranslate nohighlight">\(a_{ij}\)</span>, adalah determinan submatriks yang diperoleh dengan menghapus baris ke-i dan kolom ke-j dari matriks asli.
+<em>Contoh:</em>
+Diberikan matriks:
+A = <span class="math notranslate nohighlight">\(\begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \\ 7 &amp; 8 &amp; 9 \end{bmatrix}\)</span>
+Minor dari elemen <span class="math notranslate nohighlight">\(a_{11}\)</span> adalah:
+<span class="math notranslate nohighlight">\(N_{11}\)</span>= det <span class="math notranslate nohighlight">\(\begin{bmatrix} 5 &amp; 6\\ 8 &amp; 9\end{bmatrix} = (5 \cdot 9)-(6 \cdot 8) = 45 - 48 = -3\)</span></p>
+</section>
+<section id="cofaktor-matriks">
+<h3>Cofaktor Matriks<a class="headerlink" href="#cofaktor-matriks" title="Link to this heading">#</a></h3>
+<p>Cofaktor elemen <span class="math notranslate nohighlight">\(a_{ij}\)</span> adalah hasil perkalian minor <span class="math notranslate nohighlight">\(M_{ij}\)</span> dengan faktor tanda <span class="math notranslate nohighlight">\((-1)^{i+j}\)</span>.
+<span class="math notranslate nohighlight">\(C_{ij}= (-1)^{i+j} \cdot M^{i+j}\)</span>
+<em>Contoh:</em>
+Menggunakan matriks yang sama:
+A = <span class="math notranslate nohighlight">\(\begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \\ 7 &amp; 8 &amp; 9 \end{bmatrix}\)</span>
+Cofaktor dari elemen <span class="math notranslate nohighlight">\(a_{11}\)</span> adalah:
+<span class="math notranslate nohighlight">\(C_{11}= (-1)^{1+1} \cdot M^{11} = 1 \cdot (-3) = -3\)</span></p>
+</section>
+<section id="hubungan-minor-dan-cofaktor-dengan-determinan">
+<h3>hubungan Minor dan Cofaktor dengan Determinan<a class="headerlink" href="#hubungan-minor-dan-cofaktor-dengan-determinan" title="Link to this heading">#</a></h3>
+<p><em>Peran Minor dan Cofaktor dalam Determinan</em></p>
+<ul class="simple">
+<li><p>Determinan matriks dapat dihitung menggunakan ekspansi kofaktor (Laplace Expansion):</p></li>
+<li><p><span class="math notranslate nohighlight">\(det(A) = \sum_{j=1}^{n} a_{ij} \cdot c_{ij} \quad\)</span></p></li>
+<li><p>atau <span class="math notranslate nohighlight">\(det(A) = \sum_{i=1}^{n} a_{ij} \cdot c_{ij} \quad\)</span></p></li>
+</ul>
+</section>
+<section id="contoh-perhitungan-determinan">
+<h3>Contoh Perhitungan Determinan<a class="headerlink" href="#contoh-perhitungan-determinan" title="Link to this heading">#</a></h3>
+<section id="contoh-determinan-matriks-33">
+<h4>1. Contoh Determinan Matriks 3×3<a class="headerlink" href="#contoh-determinan-matriks-33" title="Link to this heading">#</a></h4>
+<p>Misalkan diberikan matriks:<br />
+<span class="math notranslate nohighlight">\(A =
+\begin{bmatrix}
+2 &amp; 3 &amp; 1 \\
+4 &amp; 5 &amp; 6 \\
+7 &amp; 8 &amp; 9
+\end{bmatrix}\)</span>
+Kita gunakan ekspansi kofaktor pada baris pertama:<br />
+<span class="math notranslate nohighlight">\(\det(A) = 2
+\begin{vmatrix}
+5 &amp; 6 \\
+8 &amp; 9
+\end{vmatrix} - 3
+\begin{vmatrix}
+4 &amp; 6 \\
+7 &amp; 9
+\end{vmatrix} + 1
+\begin{vmatrix}
+4 &amp; 5 \\
+7 &amp; 8
+\end{vmatrix}\)</span></p>
+<p>Hitung determinan dari masing-masing submatriks 2×2:<br />
+<span class="math notranslate nohighlight">\(\begin{vmatrix}
+5 &amp; 6 \\
+8 &amp; 9
+\end{vmatrix} = (5 \times 9) - (6 \times 8) = 45 - 48 = -3\)</span></p>
+<p><span class="math notranslate nohighlight">\(\begin{vmatrix}
+4 &amp; 6 \\
+7 &amp; 9
+\end{vmatrix} = (4 \times 9) - (6 \times 7) = 36 - 42 = -6\)</span></p>
+<p><span class="math notranslate nohighlight">\(\begin{vmatrix}
+4 &amp; 5 \\
+7 &amp; 8
+\end{vmatrix} = (4 \times 8) - (5 \times 7) = 32 - 35 = -3\)</span></p>
+<p>Substitusi hasilnya:<br />
+<span class="math notranslate nohighlight">\(\det(A) = (2 \times -3) - (3 \times -6) + (1 \times -3)\)</span>
+<span class="math notranslate nohighlight">\(= -6 + 18 - 3 = 9\)</span></p>
+</section>
+<section id="contoh-determinan-matriks-44">
+<h4>2. Contoh Determinan Matriks 4×4<a class="headerlink" href="#contoh-determinan-matriks-44" title="Link to this heading">#</a></h4>
+<p>Misalkan diberikan matriks:<br />
+<span class="math notranslate nohighlight">\(B =
+\begin{bmatrix}
+1 &amp; 2 &amp; 3 &amp; 4 \\
+5 &amp; 6 &amp; 7 &amp; 8 \\
+9 &amp; 10 &amp; 11 &amp; 12 \\
+13 &amp; 14 &amp; 15 &amp; 16
+\end{bmatrix}\)</span>
+Gunakan ekspansi kofaktor pada baris pertama:<br />
+<span class="math notranslate nohighlight">\(\det(B) = 1
+\begin{vmatrix}
+6 &amp; 7 &amp; 8 \\
+10 &amp; 11 &amp; 12 \\
+14 &amp; 15 &amp; 16
+\end{vmatrix} - 2
+\begin{vmatrix}
+5 &amp; 7 &amp; 8 \\
+9 &amp; 11 &amp; 12 \\
+13 &amp; 15 &amp; 16
+\end{vmatrix} + 3
+\begin{vmatrix}
+5 &amp; 6 &amp; 8 \\
+9 &amp; 10 &amp; 12 \\
+13 &amp; 14 &amp; 16
+\end{vmatrix} - 4
+\begin{vmatrix}
+5 &amp; 6 &amp; 7 \\
+9 &amp; 10 &amp; 11 \\
+13 &amp; 14 &amp; 15
+\end{vmatrix}\)</span></p>
+<p>Setiap submatriks 3×3 dihitung dengan metode sebelumnya:<br />
+<span class="math notranslate nohighlight">\(\begin{vmatrix}
+6 &amp; 7 &amp; 8 \\
+10 &amp; 11 &amp; 12 \\
+14 &amp; 15 &amp; 16
+\end{vmatrix} = (6(11 \times 16 - 12 \times 15)) - (7(10 \times 16 - 12 \times 14)) + (8(10 \times 15 - 11 \times 14))\)</span></p>
+<p><span class="math notranslate nohighlight">\(= (6(176 - 180)) - (7(160 - 168)) + (8(150 - 154))\)</span>
+<span class="math notranslate nohighlight">\(= (6 \times -4) - (7 \times -8) + (8 \times -4)\)</span>
+<span class="math notranslate nohighlight">\(= -24 + 56 - 32 = 0\)</span></p>
+<p>Karena semua submatriks 3×3 dari ekspansi kofaktor juga bernilai 0, maka:
+<span class="math notranslate nohighlight">\(\det(B) = 0\)</span></p>
+</section>
+<section id="contoh-determinan-matriks-55">
+<h4>3. Contoh Determinan Matriks 5×5<a class="headerlink" href="#contoh-determinan-matriks-55" title="Link to this heading">#</a></h4>
+<p>Misalkan diberikan matriks:
+<span class="math notranslate nohighlight">\(C =
+\begin{bmatrix}
+1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 \\
+6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 \\
+11 &amp; 12 &amp; 13 &amp; 14 &amp; 15 \\
+16 &amp; 17 &amp; 18 &amp; 19 &amp; 20 \\
+21 &amp; 22 &amp; 23 &amp; 24 &amp; 25
+\end{bmatrix}\)</span></p>
+<p>Gunakan ekspansi kofaktor pada baris pertama:</p>
+<p><span class="math notranslate nohighlight">\(\det(C) =
+1 \times C_{11} - 2 \times C_{12} + 3 \times C_{13} - 4 \times C_{14} + 5 \times C_{15}\)</span></p>
+<p>di mana <span class="math notranslate nohighlight">\(( C_{ij} )\)</span> adalah determinan dari submatriks 4×4 yang diperoleh dengan menghapus baris ke-1 dan kolom ke- <span class="math notranslate nohighlight">\(( j )\)</span>.
+Hitung Submatriks 4×4
+Misalkan kita hitung submatriks pertama <span class="math notranslate nohighlight">\(( C_{11} )\)</span> dengan menghapus baris pertama dan kolom pertama:</p>
+<p><span class="math notranslate nohighlight">\(C_{11} =
+\begin{vmatrix}
+7 &amp; 8 &amp; 9 &amp; 10 \\
+12 &amp; 13 &amp; 14 &amp; 15 \\
+17 &amp; 18 &amp; 19 &amp; 20 \\
+22 &amp; 23 &amp; 24 &amp; 25
+\end{vmatrix}\)</span></p>
+<p>Gunakan ekspansi kofaktor pada baris pertama dari <span class="math notranslate nohighlight">\(( C_{11} )\)</span>:
+<span class="math notranslate nohighlight">\(\begin{vmatrix}
+7 &amp; 8 &amp; 9 &amp; 10 \\
+12 &amp; 13 &amp; 14 &amp; 15 \\
+17 &amp; 18 &amp; 19 &amp; 20 \\
+22 &amp; 23 &amp; 24 &amp; 25
+\end{vmatrix} = 7
+\begin{vmatrix}
+13 &amp; 14 &amp; 15 \\
+18 &amp; 19 &amp; 20 \\
+23 &amp; 24 &amp; 25
+\end{vmatrix} - 8
+\begin{vmatrix}
+12 &amp; 14 &amp; 15 \\
+17 &amp; 19 &amp; 20 \\
+22 &amp; 24 &amp; 25
+\end{vmatrix} + 9
+\begin{vmatrix}
+12 &amp; 13 &amp; 15 \\
+17 &amp; 18 &amp; 20 \\
+22 &amp; 23 &amp; 25
+\end{vmatrix} - 10
+\begin{vmatrix}
+12 &amp; 13 &amp; 14 \\
+17 &amp; 18 &amp; 19 \\
+22 &amp; 23 &amp; 24
+\end{vmatrix}\)</span></p>
+<p>Hitung Submatriks 3×3
+Misalkan kita hitung determinan submatriks 3×3 pertama:</p>
+<p><span class="math notranslate nohighlight">\(\begin{vmatrix}
+13 &amp; 14 &amp; 15 \\
+18 &amp; 19 &amp; 20 \\
+23 &amp; 24 &amp; 25
+\end{vmatrix}\)</span></p>
+<p>Gunakan ekspansi kofaktor pada baris pertama:</p>
+<p><span class="math notranslate nohighlight">\(= 13
+\begin{vmatrix}
+19 &amp; 20 \\
+24 &amp; 25
+\end{vmatrix} - 14
+\begin{vmatrix}
+18 &amp; 20 \\
+23 &amp; 25
+\end{vmatrix} + 15
+\begin{vmatrix}
+18 &amp; 19 \\
+23 &amp; 24
+\end{vmatrix}\)</span></p>
+<p>Hitung determinan matriks 2×2:</p>
+<p><span class="math notranslate nohighlight">\(\begin{vmatrix}
+19 &amp; 20 \\
+24 &amp; 25
+\end{vmatrix}
+= (19 \times 25) - (20 \times 24) = 475 - 480 = -5\)</span></p>
+<p><span class="math notranslate nohighlight">\(\begin{vmatrix}
+18 &amp; 20 \\
+23 &amp; 25
+\end{vmatrix}
+= (18 \times 25) - (20 \times 23) = 450 - 460 = -10\)</span></p>
+<p><span class="math notranslate nohighlight">\(\begin{vmatrix}
+18 &amp; 19 \\
+23 &amp; 24
+\end{vmatrix}
+= (18 \times 24) - (19 \times 23) = 432 - 437 = -5\)</span></p>
+<p>Substitusi:</p>
+<p><span class="math notranslate nohighlight">\(= 13(-5) - 14(-10) + 15(-5)\)</span></p>
+<p><span class="math notranslate nohighlight">\(= -65 + 140 - 75 = 0\)</span></p>
+<p>Karena semua submatriks 3×3 lainnya memiliki pola angka yang sama, maka determinan semua submatriks 3×3 adalah 0.</p>
+<p>Karena setiap submatriks 4×4 memiliki determinan 0, maka:
+<span class="math notranslate nohighlight">\(\det(C) = 1(0) - 2(0) + 3(0) - 4(0) + 5(0) = 0\)</span></p>
+<p>Jadi, determinan matriks 5×5 ini adalah 0</p>
+</section>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -865,6 +1152,29 @@ x_3
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perkalian">Perkalian</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-menggunkan-invers-matrik-invers-di-cari-menggunakan-obe">penyelesaian menggunkan invers matrik,invers di cari menggunakan obe</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal">Soal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-determinan">Matriks Determinan</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh">contoh:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-sarrus-hanya-untuk-matriks-a-berukuran-3-times-3">Metode Sarrus (hanya untuk matriks ( A ) berukuran <span class="math notranslate nohighlight">\(( 3 \times 3 )\)</span>:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-determinan">Sifat sifat Determinan</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#determinan-matriks-identitas">1. Determinan matriks identitas</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#baris-atau-kolom-nol">2. Baris atau kolom nol</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pertukaran-baris-kolom">3. Pertukaran baris/kolom</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kelipatan-baris-kolom">4. Kelipatan baris/kolom</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-singular">5. Matriks Singular</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apa-itu-minor-dan-cofaktor">Apa itu Minor dan Cofaktor?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minor-matriks">Minor matriks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cofaktor-matriks">Cofaktor Matriks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hubungan-minor-dan-cofaktor-dengan-determinan">hubungan Minor dan Cofaktor dengan Determinan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-perhitungan-determinan">Contoh Perhitungan Determinan</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-determinan-matriks-33">1. Contoh Determinan Matriks 3×3</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-determinan-matriks-44">2. Contoh Determinan Matriks 4×4</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-determinan-matriks-55">3. Contoh Determinan Matriks 5×5</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
