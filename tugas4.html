@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Pembuktian Transformasi Rotasi di Bidang $\((\mathbb{R}^2)\)$ &#8212; Tugas Kall</title>
+    <title>Pembuktian Transformasi Rotasi di Bidang \((\mathbb{R}^2)\) &#8212; Tugas Kall</title>
   
   
   
@@ -186,7 +186,7 @@
 <li class="toctree-l1"><a class="reference internal" href="tugas2.html">Penyelesaian Sistem Persamaan Linier</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tugas3.html">Matrik</a></li>
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pembuktian Transformasi Rotasi di Bidang $<span class="math notranslate nohighlight">\((\mathbb{R}^2)\)</span>$</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pembuktian Transformasi Rotasi di Bidang <span class="math notranslate nohighlight">\((\mathbb{R}^2)\)</span></a></li>
 </ul>
 
     </div>
@@ -372,7 +372,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Pembuktian Transformasi Rotasi di Bidang $(\mathbb{R}^2)$</h1>
+    <h1>Pembuktian Transformasi Rotasi di Bidang (\mathbb{R}^2)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -396,35 +396,37 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="pembuktian-transformasi-rotasi-di-bidang-mathbb-r-2">
-<h1>Pembuktian Transformasi Rotasi di Bidang $<span class="math notranslate nohighlight">\((\mathbb{R}^2)\)</span>$<a class="headerlink" href="#pembuktian-transformasi-rotasi-di-bidang-mathbb-r-2" title="Link to this heading">#</a></h1>
-<p>Buktikan bahwa transformasi linier:
-$<span class="math notranslate nohighlight">\(
+<h1>Pembuktian Transformasi Rotasi di Bidang <span class="math notranslate nohighlight">\((\mathbb{R}^2)\)</span><a class="headerlink" href="#pembuktian-transformasi-rotasi-di-bidang-mathbb-r-2" title="Link to this heading">#</a></h1>
+<p>Buktikan bahwa transformasi linier:</p>
+<p><span class="math notranslate nohighlight">\(
 T : \mathbb{R}^2 \rightarrow \mathbb{R}^2
-\)</span><span class="math notranslate nohighlight">\(
-dengan matriks:
-\)</span><span class="math notranslate nohighlight">\(
+\)</span></p>
+<p>dengan matriks:</p>
+<p><span class="math notranslate nohighlight">\(
 A = \begin{bmatrix}
 \cos \theta &amp; -\sin \theta \\
 \sin \theta &amp; \cos \theta
 \end{bmatrix}
-\)</span>$
-merupakan rotasi berlawanan arah jarum jam sebesar sudut (\theta).</p>
+\)</span></p>
+<p>merupakan rotasi berlawanan arah jarum jam sebesar sudut <span class="math notranslate nohighlight">\((\theta)\)</span>.</p>
 <hr class="docutils" />
 <section id="langkah-langkah-pembuktian">
 <h2>Langkah-langkah Pembuktian:<a class="headerlink" href="#langkah-langkah-pembuktian" title="Link to this heading">#</a></h2>
-<p>Misalkan suatu vektor $<span class="math notranslate nohighlight">\((\vec{v} = (x, y))\)</span><span class="math notranslate nohighlight">\( dalam koordinat polar dapat dituliskan sebagai:
-\)</span><span class="math notranslate nohighlight">\(
+<p>Misalkan suatu vektor <span class="math notranslate nohighlight">\(((\vec{v} = (x, y))\)</span> dalam koordinat polar dapat dituliskan sebagai:</p>
+<p><span class="math notranslate nohighlight">\(
 \vec{v} = (r \cos \alpha, r \sin \alpha)
-\)</span>$
-dengan:</p>
-<ul>
-<li><div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}(r = \|\vec{v}| = \sqrt{x^2 + y^2})$$: panjang vektor  
-- $$(\alpha)$$: sudut antara vektor dan sumbu-X\\Lakukan transformasi matriks rotasi terhadap $$(\vec{v}):\end{aligned}\end{align} \]</div>
-</li>
+\)</span></p>
+<p>dengan:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((r = \|\vec{v}| = \sqrt{x^2 + y^2})\)</span></p></li>
 </ul>
-<div class="math notranslate nohighlight">
-\[\begin{split}
+<p>: panjang vektor</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((\alpha)\)</span></p></li>
+</ul>
+<p>: sudut antara vektor dan sumbu-X</p>
+<p>Lakukan transformasi matriks rotasi terhadap <span class="math notranslate nohighlight">\((\vec{v}):\)</span></p>
+<p><span class="math notranslate nohighlight">\(
 A \vec{v} =
 \begin{bmatrix}
 \cos \theta &amp; -\sin \theta \\
@@ -434,9 +436,9 @@ A \vec{v} =
 r \cos \alpha \\
 r \sin \alpha
 \end{bmatrix}
-\end{split}\]</div>
-<p>Hasil perkalian matriks:
-$<span class="math notranslate nohighlight">\(
+\)</span></p>
+<p>Hasil perkalian matriks:</p>
+<p><span class="math notranslate nohighlight">\(
 A \vec{v} =
 \begin{bmatrix}
 r \cos \theta \cos \alpha - r \sin \theta \sin \alpha \\
@@ -447,27 +449,27 @@ r \sin \theta \cos \alpha + r \cos \theta \sin \alpha
 \cos \theta \cos \alpha - \sin \theta \sin \alpha \\
 \sin \theta \cos \alpha + \cos \theta \sin \alpha
 \end{bmatrix}
-\)</span>$</p>
-<p>Gunakan identitas trigonometri:
-$<span class="math notranslate nohighlight">\(
+\)</span></p>
+<p>Gunakan identitas trigonometri:</p>
+<p><span class="math notranslate nohighlight">\(
  \cos(\alpha + \theta) = \cos \alpha \cos \theta - \sin \alpha \sin \theta\\
 \sin(\alpha + \theta) = \sin \alpha \cos \theta + \cos \alpha \sin \theta)
-\)</span><span class="math notranslate nohighlight">\(
-Sehingga:
-\)</span><span class="math notranslate nohighlight">\(
+\)</span></p>
+<p>Sehingga:</p>
+<p><span class="math notranslate nohighlight">\(
 A \vec{v} = r
 \begin{bmatrix}
 \cos(\alpha + \theta) \\
 \sin(\alpha + \theta)
 \end{bmatrix}
-\)</span>$</p>
+\)</span></p>
 </section>
 <hr class="docutils" />
 <section id="kesimpulan">
 <h2>Kesimpulan:<a class="headerlink" href="#kesimpulan" title="Link to this heading">#</a></h2>
-<p>Transformasi oleh matriks (A) memutar vektor sebesar sudut $<span class="math notranslate nohighlight">\((\theta)\)</span><span class="math notranslate nohighlight">\( berlawanan arah jarum jam tanpa mengubah panjangnya.  
+<p>Transformasi oleh matriks <span class="math notranslate nohighlight">\((A\)\)</span> memutar vektor sebesar sudut <span class="math notranslate nohighlight">\((\theta)\)</span> berlawanan arah jarum jam tanpa mengubah panjangnya.<br />
 Maka, terbukti bahwa:
-\)</span><span class="math notranslate nohighlight">\(
+$<span class="math notranslate nohighlight">\(
 A = \begin{bmatrix}
 \cos \theta &amp; -\sin \theta \\
 \sin \theta &amp; \cos \theta
