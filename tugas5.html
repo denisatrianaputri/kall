@@ -521,7 +521,7 @@ x
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline  
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">pi</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -625,7 +625,7 @@ x
 <section id="latihan">
 <h2>Latihan<a class="headerlink" href="#latihan" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Carilah matriks yang menggambarkan refleksi terhadap sumbu x. Kalikan matrik dengan 4 titik koordinat dan plot hasilnya</p></li>
+<li><p>Carilah matriks yang menggambarkan refleksi terhadap sumbu y = x. Kalikan matrik dengan 4 titik koordinat dan plot hasilnya</p></li>
 <li><p>Carilah matriks yang menggambarkan refleksi terhadap sumbu y= -x. Kalikan matrik dengan 4 titik koordinat dan plot hasilnya</p></li>
 </ol>
 </section>
@@ -681,7 +681,7 @@ y + kx
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline  
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">pi</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -737,7 +737,7 @@ y + kx
 <p>Untuk memutar vektor sebesar sudut <span class="math notranslate nohighlight">\(\theta\)</span> terhadap titik asal dalam bidang 2D:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-R(\theta) = 
+R(\theta) =
 \begin{bmatrix}
 \cos\theta &amp; -\sin\theta \\
 \sin\theta &amp; \cos\theta
@@ -767,7 +767,7 @@ y
 </ol>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-R_x(\theta) = 
+R_x(\theta) =
 \begin{bmatrix}
 1 &amp; 0 &amp; 0 \\
 0 &amp; \cos\theta &amp; -\sin\theta \\
@@ -779,7 +779,7 @@ R_x(\theta) =
 </ol>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-R_y(\theta) = 
+R_y(\theta) =
 \begin{bmatrix}
 \cos\theta &amp; 0 &amp; \sin\theta \\
 0 &amp; 1 &amp; 0 \\
@@ -791,7 +791,7 @@ R_y(\theta) =
 </ol>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-R_z(\theta) = 
+R_z(\theta) =
 \begin{bmatrix}
 \cos\theta &amp; -\sin\theta &amp; 0 \\
 \sin\theta &amp; \cos\theta &amp; 0 \\
@@ -812,7 +812,7 @@ R_z(\theta) =
 <hr class="docutils" />
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline  
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">pi</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -901,7 +901,7 @@ C = A \times B
 <li><p><strong>Rotasi</strong>: Matriks rotasi 90°:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-   R = 
+   R =
    \begin{bmatrix}
    0 &amp; -1 \\
    1 &amp; 0
@@ -911,7 +911,7 @@ C = A \times B
 <li><p><strong>Translasi</strong>: Matriks translasi 5 satuan ke kanan dan 3 satuan ke atas:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-   T = 
+   T =
    \begin{bmatrix}
    1 &amp; 0 &amp; 5 \\
    0 &amp; 1 &amp; 3 \\
