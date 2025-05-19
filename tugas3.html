@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'tugas3';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Pembuktian Transformasi Rotasi di Bidang \((\mathbb{R}^2)\)" href="tugas4.html" />
+    <link rel="next" title="Eigenvalue dan Eigenvector" href="tugas4.html" />
     <link rel="prev" title="Penyelesaian Sistem Persamaan Linier" href="tugas2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -187,7 +187,8 @@
 <li class="toctree-l1"><a class="reference internal" href="tugas2.html">Penyelesaian Sistem Persamaan Linier</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Matrik</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="tugas4.html">Pembuktian Transformasi Rotasi di Bidang <span class="math notranslate nohighlight">\((\mathbb{R}^2)\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="tugas4.html"><strong>Eigenvalue dan Eigenvector</strong></a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="tugas5.html">Refleksi</a></li>
 
 
@@ -412,12 +413,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minor-matriks">Minor matriks</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cofaktor-matriks">Cofaktor Matriks</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hubungan-minor-dan-cofaktor-dengan-determinan">hubungan Minor dan Cofaktor dengan Determinan</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-perhitungan-determinan">Contoh Perhitungan Determinan</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-determinan-matriks-33">1. Contoh Determinan Matriks 3×3</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-determinan-matriks-44">2. Contoh Determinan Matriks 4×4</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-determinan-matriks-55">3. Contoh Determinan Matriks 5×5</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuktian-transformasi-rotasi-di-bidang-mathbb-r-2">Pembuktian Transformasi Rotasi di Bidang <span class="math notranslate nohighlight">\((\mathbb{R}^2)\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah-pembuktian">Langkah-langkah Pembuktian:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan:</a></li>
 </ul>
 </li>
 </ul>
@@ -897,191 +897,92 @@ Cofaktor dari elemen <span class="math notranslate nohighlight">\(a_{11}\)</span
 <ul class="simple">
 <li><p>Determinan matriks dapat dihitung menggunakan ekspansi kofaktor (Laplace Expansion):</p></li>
 <li><p><span class="math notranslate nohighlight">\(det(A) = \sum_{j=1}^{n} a_{ij} \cdot c_{ij} \quad\)</span></p></li>
-<li><p>atau $det(A) = \sum_{i=1}^{n} a_{ij} \cdot c_{ij} \quad</p></li>
+<li><p>atau <span class="math notranslate nohighlight">\(det(A) = \sum_{i=1}^{n} a_{ij} \cdot c_{ij} \quad\)</span></p></li>
 </ul>
 </section>
-<section id="contoh-perhitungan-determinan">
-<h3>Contoh Perhitungan Determinan<a class="headerlink" href="#contoh-perhitungan-determinan" title="Link to this heading">#</a></h3>
-<section id="contoh-determinan-matriks-33">
-<h4>1. Contoh Determinan Matriks 3×3<a class="headerlink" href="#contoh-determinan-matriks-33" title="Link to this heading">#</a></h4>
-<p>Misalkan diberikan matriks:<br />
-<span class="math notranslate nohighlight">\(A =
-\begin{bmatrix}
-2 &amp; 3 &amp; 1 \\
-4 &amp; 5 &amp; 6 \\
-7 &amp; 8 &amp; 9
-\end{bmatrix}\)</span>
-Kita gunakan ekspansi kofaktor pada baris pertama:<br />
-<span class="math notranslate nohighlight">\(\det(A) = 2
-\begin{vmatrix}
-5 &amp; 6 \\
-8 &amp; 9
-\end{vmatrix} - 3
-\begin{vmatrix}
-4 &amp; 6 \\
-7 &amp; 9
-\end{vmatrix} + 1
-\begin{vmatrix}
-4 &amp; 5 \\
-7 &amp; 8
-\end{vmatrix}\)</span></p>
-<p>Hitung determinan dari masing-masing submatriks 2×2:<br />
-<span class="math notranslate nohighlight">\(\begin{vmatrix}
-5 &amp; 6 \\
-8 &amp; 9
-\end{vmatrix} = (5 \times 9) - (6 \times 8) = 45 - 48 = -3\)</span></p>
-<p><span class="math notranslate nohighlight">\(\begin{vmatrix}
-4 &amp; 6 \\
-7 &amp; 9
-\end{vmatrix} = (4 \times 9) - (6 \times 7) = 36 - 42 = -6\)</span></p>
-<p><span class="math notranslate nohighlight">\(\begin{vmatrix}
-4 &amp; 5 \\
-7 &amp; 8
-\end{vmatrix} = (4 \times 8) - (5 \times 7) = 32 - 35 = -3\)</span></p>
-<p>Substitusi hasilnya:<br />
-<span class="math notranslate nohighlight">\(\det(A) = (2 \times -3) - (3 \times -6) + (1 \times -3)\)</span>
-<span class="math notranslate nohighlight">\(= -6 + 18 - 3 = 9\)</span></p>
 </section>
-<section id="contoh-determinan-matriks-44">
-<h4>2. Contoh Determinan Matriks 4×4<a class="headerlink" href="#contoh-determinan-matriks-44" title="Link to this heading">#</a></h4>
-<p>Misalkan diberikan matriks:<br />
-<span class="math notranslate nohighlight">\(B =
+<section id="pembuktian-transformasi-rotasi-di-bidang-mathbb-r-2">
+<h2>Pembuktian Transformasi Rotasi di Bidang <span class="math notranslate nohighlight">\((\mathbb{R}^2)\)</span><a class="headerlink" href="#pembuktian-transformasi-rotasi-di-bidang-mathbb-r-2" title="Link to this heading">#</a></h2>
+<p>Buktikan bahwa transformasi linier:</p>
+<p><span class="math notranslate nohighlight">\(
+T : \mathbb{R}^2 \rightarrow \mathbb{R}^2
+\)</span></p>
+<p>dengan matriks:</p>
+<p><span class="math notranslate nohighlight">\(
+A = \begin{bmatrix}
+\cos \theta &amp; -\sin \theta \\
+\sin \theta &amp; \cos \theta
+\end{bmatrix}
+\)</span></p>
+<p>merupakan rotasi berlawanan arah jarum jam sebesar sudut <span class="math notranslate nohighlight">\((\theta)\)</span>.</p>
+<hr class="docutils" />
+<section id="langkah-langkah-pembuktian">
+<h3>Langkah-langkah Pembuktian:<a class="headerlink" href="#langkah-langkah-pembuktian" title="Link to this heading">#</a></h3>
+<p>Misalkan suatu vektor <span class="math notranslate nohighlight">\(((\vec{v} = (x, y))\)</span> dalam koordinat polar dapat dituliskan sebagai:</p>
+<p><span class="math notranslate nohighlight">\(
+\vec{v} = (r \cos \alpha, r \sin \alpha)
+\)</span></p>
+<p>dengan:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((r = \|\vec{v}| = \sqrt{x^2 + y^2})\)</span></p></li>
+</ul>
+<p>: panjang vektor</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((\alpha)\)</span></p></li>
+</ul>
+<p>: sudut antara vektor dan sumbu-X</p>
+<p>Lakukan transformasi matriks rotasi terhadap <span class="math notranslate nohighlight">\((\vec{v}):\)</span></p>
+<p><span class="math notranslate nohighlight">\(
+A \vec{v} =
 \begin{bmatrix}
-1 &amp; 2 &amp; 3 &amp; 4 \\
-5 &amp; 6 &amp; 7 &amp; 8 \\
-9 &amp; 10 &amp; 11 &amp; 12 \\
-13 &amp; 14 &amp; 15 &amp; 16
-\end{bmatrix}\)</span>
-Gunakan ekspansi kofaktor pada baris pertama:<br />
-<span class="math notranslate nohighlight">\(\det(B) = 1
-\begin{vmatrix}
-6 &amp; 7 &amp; 8 \\
-10 &amp; 11 &amp; 12 \\
-14 &amp; 15 &amp; 16
-\end{vmatrix} - 2
-\begin{vmatrix}
-5 &amp; 7 &amp; 8 \\
-9 &amp; 11 &amp; 12 \\
-13 &amp; 15 &amp; 16
-\end{vmatrix} + 3
-\begin{vmatrix}
-5 &amp; 6 &amp; 8 \\
-9 &amp; 10 &amp; 12 \\
-13 &amp; 14 &amp; 16
-\end{vmatrix} - 4
-\begin{vmatrix}
-5 &amp; 6 &amp; 7 \\
-9 &amp; 10 &amp; 11 \\
-13 &amp; 14 &amp; 15
-\end{vmatrix}\)</span></p>
-<p>Setiap submatriks 3×3 dihitung dengan metode sebelumnya:<br />
-<span class="math notranslate nohighlight">\(\begin{vmatrix}
-6 &amp; 7 &amp; 8 \\
-10 &amp; 11 &amp; 12 \\
-14 &amp; 15 &amp; 16
-\end{vmatrix} = (6(11 \times 16 - 12 \times 15)) - (7(10 \times 16 - 12 \times 14)) + (8(10 \times 15 - 11 \times 14))\)</span></p>
-<p><span class="math notranslate nohighlight">\(= (6(176 - 180)) - (7(160 - 168)) + (8(150 - 154))\)</span>
-<span class="math notranslate nohighlight">\(= (6 \times -4) - (7 \times -8) + (8 \times -4)\)</span>
-<span class="math notranslate nohighlight">\(= -24 + 56 - 32 = 0\)</span></p>
-<p>Karena semua submatriks 3×3 dari ekspansi kofaktor juga bernilai 0, maka:
-<span class="math notranslate nohighlight">\(\det(B) = 0\)</span></p>
-</section>
-<section id="contoh-determinan-matriks-55">
-<h4>3. Contoh Determinan Matriks 5×5<a class="headerlink" href="#contoh-determinan-matriks-55" title="Link to this heading">#</a></h4>
-<p>Misalkan diberikan matriks:
-<span class="math notranslate nohighlight">\(C =
+\cos \theta &amp; -\sin \theta \\
+\sin \theta &amp; \cos \theta
+\end{bmatrix}
 \begin{bmatrix}
-1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 \\
-6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 \\
-11 &amp; 12 &amp; 13 &amp; 14 &amp; 15 \\
-16 &amp; 17 &amp; 18 &amp; 19 &amp; 20 \\
-21 &amp; 22 &amp; 23 &amp; 24 &amp; 25
-\end{bmatrix}\)</span></p>
-<p>Gunakan ekspansi kofaktor pada baris pertama:</p>
-<p><span class="math notranslate nohighlight">\(\det(C) =
-1 \times C_{11} - 2 \times C_{12} + 3 \times C_{13} - 4 \times C_{14} + 5 \times C_{15}\)</span></p>
-<p>di mana <span class="math notranslate nohighlight">\(( C_{ij} )\)</span> adalah determinan dari submatriks 4×4 yang diperoleh dengan menghapus baris ke-1 dan kolom ke- <span class="math notranslate nohighlight">\(( j )\)</span>.
-Hitung Submatriks 4×4
-Misalkan kita hitung submatriks pertama <span class="math notranslate nohighlight">\(( C_{11} )\)</span> dengan menghapus baris pertama dan kolom pertama:</p>
-<p><span class="math notranslate nohighlight">\(C_{11} =
-\begin{vmatrix}
-7 &amp; 8 &amp; 9 &amp; 10 \\
-12 &amp; 13 &amp; 14 &amp; 15 \\
-17 &amp; 18 &amp; 19 &amp; 20 \\
-22 &amp; 23 &amp; 24 &amp; 25
-\end{vmatrix}\)</span></p>
-<p>Gunakan ekspansi kofaktor pada baris pertama dari <span class="math notranslate nohighlight">\(( C_{11} )\)</span>:
-<span class="math notranslate nohighlight">\(\begin{vmatrix}
-7 &amp; 8 &amp; 9 &amp; 10 \\
-12 &amp; 13 &amp; 14 &amp; 15 \\
-17 &amp; 18 &amp; 19 &amp; 20 \\
-22 &amp; 23 &amp; 24 &amp; 25
-\end{vmatrix} = 7
-\begin{vmatrix}
-13 &amp; 14 &amp; 15 \\
-18 &amp; 19 &amp; 20 \\
-23 &amp; 24 &amp; 25
-\end{vmatrix} - 8
-\begin{vmatrix}
-12 &amp; 14 &amp; 15 \\
-17 &amp; 19 &amp; 20 \\
-22 &amp; 24 &amp; 25
-\end{vmatrix} + 9
-\begin{vmatrix}
-12 &amp; 13 &amp; 15 \\
-17 &amp; 18 &amp; 20 \\
-22 &amp; 23 &amp; 25
-\end{vmatrix} - 10
-\begin{vmatrix}
-12 &amp; 13 &amp; 14 \\
-17 &amp; 18 &amp; 19 \\
-22 &amp; 23 &amp; 24
-\end{vmatrix}\)</span></p>
-<p>Hitung Submatriks 3×3
-Misalkan kita hitung determinan submatriks 3×3 pertama:</p>
-<p><span class="math notranslate nohighlight">\(\begin{vmatrix}
-13 &amp; 14 &amp; 15 \\
-18 &amp; 19 &amp; 20 \\
-23 &amp; 24 &amp; 25
-\end{vmatrix}\)</span></p>
-<p>Gunakan ekspansi kofaktor pada baris pertama:</p>
-<p><span class="math notranslate nohighlight">\(= 13
-\begin{vmatrix}
-19 &amp; 20 \\
-24 &amp; 25
-\end{vmatrix} - 14
-\begin{vmatrix}
-18 &amp; 20 \\
-23 &amp; 25
-\end{vmatrix} + 15
-\begin{vmatrix}
-18 &amp; 19 \\
-23 &amp; 24
-\end{vmatrix}\)</span></p>
-<p>Hitung determinan matriks 2×2:</p>
-<p><span class="math notranslate nohighlight">\(\begin{vmatrix}
-19 &amp; 20 \\
-24 &amp; 25
-\end{vmatrix}
-= (19 \times 25) - (20 \times 24) = 475 - 480 = -5\)</span></p>
-<p><span class="math notranslate nohighlight">\(\begin{vmatrix}
-18 &amp; 20 \\
-23 &amp; 25
-\end{vmatrix}
-= (18 \times 25) - (20 \times 23) = 450 - 460 = -10\)</span></p>
-<p><span class="math notranslate nohighlight">\(\begin{vmatrix}
-18 &amp; 19 \\
-23 &amp; 24
-\end{vmatrix}
-= (18 \times 24) - (19 \times 23) = 432 - 437 = -5\)</span></p>
-<p>Substitusi:</p>
-<p><span class="math notranslate nohighlight">\(= 13(-5) - 14(-10) + 15(-5)\)</span></p>
-<p><span class="math notranslate nohighlight">\(= -65 + 140 - 75 = 0\)</span></p>
-<p>Karena semua submatriks 3×3 lainnya memiliki pola angka yang sama, maka determinan semua submatriks 3×3 adalah 0.</p>
-<p>Karena setiap submatriks 4×4 memiliki determinan 0, maka:
-<span class="math notranslate nohighlight">\(\det(C) = 1(0) - 2(0) + 3(0) - 4(0) + 5(0) = 0\)</span></p>
-<p>Jadi, determinan matriks 5×5 ini adalah 0</p>
+r \cos \alpha \\
+r \sin \alpha
+\end{bmatrix}
+\)</span></p>
+<p>Hasil perkalian matriks:</p>
+<p><span class="math notranslate nohighlight">\(
+A \vec{v} =
+\begin{bmatrix}
+r \cos \theta \cos \alpha - r \sin \theta \sin \alpha \\
+r \sin \theta \cos \alpha + r \cos \theta \sin \alpha
+\end{bmatrix}
+= r
+\begin{bmatrix}
+\cos \theta \cos \alpha - \sin \theta \sin \alpha \\
+\sin \theta \cos \alpha + \cos \theta \sin \alpha
+\end{bmatrix}
+\)</span></p>
+<p>Gunakan identitas trigonometri:</p>
+<p><span class="math notranslate nohighlight">\(
+ \cos(\alpha + \theta) = \cos \alpha \cos \theta - \sin \alpha \sin \theta\\
+\sin(\alpha + \theta) = \sin \alpha \cos \theta + \cos \alpha \sin \theta)
+\)</span></p>
+<p>Sehingga:</p>
+<p><span class="math notranslate nohighlight">\(
+A \vec{v} = r
+\begin{bmatrix}
+\cos(\alpha + \theta) \\
+\sin(\alpha + \theta)
+\end{bmatrix}
+\)</span></p>
 </section>
+<hr class="docutils" />
+<section id="kesimpulan">
+<h3>Kesimpulan:<a class="headerlink" href="#kesimpulan" title="Link to this heading">#</a></h3>
+<p>Transformasi oleh matriks <span class="math notranslate nohighlight">\((A)\)</span> memutar vektor sebesar sudut <span class="math notranslate nohighlight">\((\theta)\)</span></p>
+<p>berlawanan arah jarum jam tanpa mengubah panjangnya.<br />
+Maka, terbukti bahwa:</p>
+<p>$
+A = \begin{bmatrix}
+\cos \theta &amp; -\sin \theta \
+\sin \theta &amp; \cos \theta
+\end{bmatrix}</p>
+<p>adalah matriks rotasi di bidang</p>
+<p><span class="math notranslate nohighlight">\((\mathbb{R}^2)\)</span></p>
 </section>
 </section>
 </section>
@@ -1130,7 +1031,7 @@ Misalkan kita hitung determinan submatriks 3×3 pertama:</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Pembuktian Transformasi Rotasi di Bidang <span class="math notranslate nohighlight">\((\mathbb{R}^2)\)</span></p>
+        <p class="prev-next-title"><strong>Eigenvalue dan Eigenvector</strong></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1174,12 +1075,11 @@ Misalkan kita hitung determinan submatriks 3×3 pertama:</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minor-matriks">Minor matriks</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cofaktor-matriks">Cofaktor Matriks</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hubungan-minor-dan-cofaktor-dengan-determinan">hubungan Minor dan Cofaktor dengan Determinan</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-perhitungan-determinan">Contoh Perhitungan Determinan</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-determinan-matriks-33">1. Contoh Determinan Matriks 3×3</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-determinan-matriks-44">2. Contoh Determinan Matriks 4×4</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-determinan-matriks-55">3. Contoh Determinan Matriks 5×5</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuktian-transformasi-rotasi-di-bidang-mathbb-r-2">Pembuktian Transformasi Rotasi di Bidang <span class="math notranslate nohighlight">\((\mathbb{R}^2)\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah-pembuktian">Langkah-langkah Pembuktian:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan:</a></li>
 </ul>
 </li>
 </ul>
