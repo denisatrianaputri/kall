@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Contoh Menghitung Hasil Kali Silang &#8212; Tugas Kall</title>
+    <title>Cross Produt &#8212; Tugas Kall</title>
   
   
   
@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'tugas7';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Refleksi" href="tugas5.html" />
+    <link rel="prev" title="Eigenvalue dan Eigenvector" href="tugas4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -186,14 +186,14 @@
 <li class="toctree-l1"><a class="reference internal" href="tugas2.html">Penyelesaian Sistem Persamaan Linier</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tugas3.html">Matrik</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="tugas4.html"><strong>Eigenvalue dan Eigenvector</strong></a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="tugas5.html">Refleksi</a></li>
 
 
 
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Contoh Menghitung Hasil Kali Silang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tugas4.html"><strong>Eigenvalue dan Eigenvector</strong></a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Cross Produt</strong></a></li>
 </ul>
 
     </div>
@@ -379,7 +379,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Contoh Menghitung Hasil Kali Silang</h1>
+    <h1>Cross Produt</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -389,7 +389,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-menggunakan-definisi">Solusi Menggunakan Definisi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definsi-hasil-kali-silang">Definsi Hasil Kali Silang</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#misal">Misal:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-menghitung-hasil-kali-silang">Contoh Menghitung Hasil Kali Silang</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-menggunakan-definisi">Solusi Menggunakan Definisi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verifikasi-vektor-tegak-lurus">Verifikasi Vektor Tegak Lurus</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cek-dot-product">Cek dot product:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Cek dot product:</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -401,13 +411,17 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p>#<strong>Cross Produt</strong></p>
-<p>##Definsi Hasil Kali Silang</p>
-<p>###Misal:
-$<span class="math notranslate nohighlight">\(
+  <section class="tex2jax_ignore mathjax_ignore" id="cross-produt">
+<h1><strong>Cross Produt</strong><a class="headerlink" href="#cross-produt" title="Link to this heading">#</a></h1>
+<section id="definsi-hasil-kali-silang">
+<h2>Definsi Hasil Kali Silang<a class="headerlink" href="#definsi-hasil-kali-silang" title="Link to this heading">#</a></h2>
+<section id="misal">
+<h3>Misal:<a class="headerlink" href="#misal" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \vec{u} = \begin{bmatrix} u_1 \\ u_2 \\ u_3 \end{bmatrix}, \quad
 \vec{v} = \begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix}
-\)</span>$</p>
+\end{split}\]</div>
 <p>adalah vektor-vektor di <span class="math notranslate nohighlight">\({R}^3\)</span>. Hasil kali silang dari <span class="math notranslate nohighlight">\(\vec{u}\)</span> dan <span class="math notranslate nohighlight">\(\vec{v}\)</span>, dinotasikan sebagai <span class="math notranslate nohighlight">\(\vec{u} \times \vec{v}\)</span>, adalah vektor:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -418,14 +432,16 @@ u_2 v_3 - u_3 v_2 \\
 u_1 v_2 - u_2 v_1
 \end{bmatrix}
 \end{split}\]</div>
+</section>
 <section id="contoh-menghitung-hasil-kali-silang">
-<h1>Contoh Menghitung Hasil Kali Silang<a class="headerlink" href="#contoh-menghitung-hasil-kali-silang" title="Link to this heading">#</a></h1>
+<h3>Contoh Menghitung Hasil Kali Silang<a class="headerlink" href="#contoh-menghitung-hasil-kali-silang" title="Link to this heading">#</a></h3>
 <p>Misalkan
 <span class="math notranslate nohighlight">\(\vec{u} = \begin{bmatrix} 2 \\ -1 \\ 4 \end{bmatrix}, \quad
 \vec{v} = \begin{bmatrix} 3 \\ 2 \\ 5 \end{bmatrix}\)</span></p>
 <p>Temukan <span class="math notranslate nohighlight">\(\vec{u} \times \vec{v}\)</span>, dan verifikasi bahwa hasil kali silang ini tegak lurus terhadap baik <span class="math notranslate nohighlight">\(\vec{u}\)</span> maupun <span class="math notranslate nohighlight">\(\vec{v}\)</span>.</p>
+</section>
 <section id="solusi-menggunakan-definisi">
-<h2>Solusi Menggunakan Definisi<a class="headerlink" href="#solusi-menggunakan-definisi" title="Link to this heading">#</a></h2>
+<h3>Solusi Menggunakan Definisi<a class="headerlink" href="#solusi-menggunakan-definisi" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \vec{u} \times \vec{v} =
@@ -447,6 +463,37 @@ u_1 v_2 - u_2 v_1
 7
 \end{bmatrix}
 \end{split}\]</div>
+</section>
+<section id="verifikasi-vektor-tegak-lurus">
+<h3>Verifikasi Vektor Tegak Lurus<a class="headerlink" href="#verifikasi-vektor-tegak-lurus" title="Link to this heading">#</a></h3>
+<p>Diketahui hasil kali silang:<br />
+$<span class="math notranslate nohighlight">\(
+\vec{u} \times \vec{v} = \begin{bmatrix} -13 \\ 2 \\ 7 \end{bmatrix}
+\)</span>$</p>
+<p>dan</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vec{u} = \begin{bmatrix} 2 \\ -1 \\ 4 \end{bmatrix}, \quad
+\vec{v} = \begin{bmatrix} 3 \\ 2 \\ 5 \end{bmatrix}
+\end{split}\]</div>
+<section id="cek-dot-product">
+<h4>Cek dot product:<a class="headerlink" href="#cek-dot-product" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[
+(\vec{u} \times \vec{v}) \cdot \vec{u} =
+(-13)(2) + (2)(-1) + (7)(4) = -26 - 2 + 28 = 0
+\]</div>
+</section>
+</section>
+<section id="id1">
+<h3>Cek dot product:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+(\vec{u} \times \vec{v}) \cdot \vec{v} =
+(-13)(3) + (2)(2) + (7)(5) = -39 + 4 + 35 = 0
+\]</div>
+<p>Karena hasil dot product keduanya adalah 0, maka:<br />
+<em><span class="math notranslate nohighlight">\(\vec{u} \times \vec{v}\)</span></em> tegak lurus terhadap <em><span class="math notranslate nohighlight">\(\vec{u}\)</span></em> dan <em><span class="math notranslate nohighlight">\(\vec{v}\)</span></em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -468,6 +515,7 @@ u_1 v_2 - u_2 v_1
 </div>
 </div>
 </div>
+</section>
 </section>
 </section>
 
@@ -502,12 +550,12 @@ u_1 v_2 - u_2 v_1
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="tugas5.html"
+       href="tugas4.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Refleksi</p>
+        <p class="prev-next-title"><strong>Eigenvalue dan Eigenvector</strong></p>
       </div>
     </a>
 </div>
@@ -526,7 +574,17 @@ u_1 v_2 - u_2 v_1
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-menggunakan-definisi">Solusi Menggunakan Definisi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definsi-hasil-kali-silang">Definsi Hasil Kali Silang</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#misal">Misal:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-menghitung-hasil-kali-silang">Contoh Menghitung Hasil Kali Silang</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-menggunakan-definisi">Solusi Menggunakan Definisi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verifikasi-vektor-tegak-lurus">Verifikasi Vektor Tegak Lurus</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cek-dot-product">Cek dot product:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Cek dot product:</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
