@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'tugas7';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Eigenvalue dan Eigenvector" href="tugas4.html" />
+    <link rel="prev" title="Perkalian Titik (Dot Product)" href="tugas8.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -192,6 +192,8 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="tugas4.html">Eigenvalue dan Eigenvector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tugas8.html">Perkalian Titik (Dot Product)</a></li>
+
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Cross Produt</a></li>
 </ul>
 
@@ -390,10 +392,12 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definsi-hasil-kali-silang">Definsi Hasil Kali Silang</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#misal">Misal:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus">Rumus:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-menghitung-hasil-kali-silang">Contoh Menghitung Hasil Kali Silang</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-menggunakan-definisi">Solusi Menggunakan Definisi</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verifikasi-vektor-tegak-lurus">Verifikasi Vektor Tegak Lurus</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cek-dot-product">Cek dot product:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-hasil-kali-silang-menggunakan-determinan">Menghitung Hasil Kali Silang Menggunakan Determinan</a></li>
 </ul>
 </li>
 </ul>
@@ -428,7 +432,9 @@ u_2 v_3 - u_3 v_2 \\
 u_1 v_2 - u_2 v_1
 \end{bmatrix}
 \end{split}\]</div>
-<p>Rumus:</p>
+</section>
+<section id="rumus">
+<h3>Rumus:<a class="headerlink" href="#rumus" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 i=(1,0,0)\\
@@ -496,6 +502,47 @@ jxi(0,0,-1)=-k
 \]</div>
 <p>Karena hasil dot product keduanya adalah 0, maka:<br />
 <em><span class="math notranslate nohighlight">\(\vec{u} \times \vec{v}\)</span></em> tegak lurus terhadap <em><span class="math notranslate nohighlight">\(\vec{u}\)</span></em> dan <em><span class="math notranslate nohighlight">\(\vec{v}\)</span></em></p>
+</section>
+<section id="menghitung-hasil-kali-silang-menggunakan-determinan">
+<h3>Menghitung Hasil Kali Silang Menggunakan Determinan<a class="headerlink" href="#menghitung-hasil-kali-silang-menggunakan-determinan" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vec{u} = \begin{bmatrix} 2 \\ -1 \\ 4 \end{bmatrix}, \quad
+\vec{v} = \begin{bmatrix} 3 \\ 2 \\ 5 \end{bmatrix}
+\end{split}\]</div>
+<p>Gunakan determinan dari matriks:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vec{u} \times \vec{v} =
+\begin{vmatrix}
+\hat{i} &amp; \hat{j} &amp; \hat{k} \\
+2 &amp; -1 &amp; 4 \\
+3 &amp; 2 &amp; 5
+\end{vmatrix}
+\end{split}\]</div>
+<p>Hitung masing-masing komponen:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{i} = (-1)(5) - (4)(2) = -5 - 8 = -13
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\hat{j} = - \left[ (2)(5) - (4)(3) \right] = - (10 - 12) = 2
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\hat{k} = (2)(2) - (-1)(3) = 4 + 3 = 7
+\]</div>
+<p>Jadi:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vec{u} \times \vec{v} = -13\hat{i} + 2\hat{j} + 7\hat{k} =
+\begin{bmatrix}
+-13 \\
+2 \\
+7
+\end{bmatrix}
+\end{split}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -549,12 +596,12 @@ jxi(0,0,-1)=-k
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="tugas4.html"
+       href="tugas8.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Eigenvalue dan Eigenvector</p>
+        <p class="prev-next-title">Perkalian Titik (Dot Product)</p>
       </div>
     </a>
 </div>
@@ -575,10 +622,12 @@ jxi(0,0,-1)=-k
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definsi-hasil-kali-silang">Definsi Hasil Kali Silang</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#misal">Misal:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus">Rumus:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-menghitung-hasil-kali-silang">Contoh Menghitung Hasil Kali Silang</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-menggunakan-definisi">Solusi Menggunakan Definisi</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verifikasi-vektor-tegak-lurus">Verifikasi Vektor Tegak Lurus</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cek-dot-product">Cek dot product:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-hasil-kali-silang-menggunakan-determinan">Menghitung Hasil Kali Silang Menggunakan Determinan</a></li>
 </ul>
 </li>
 </ul>
