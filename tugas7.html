@@ -192,7 +192,6 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="tugas4.html">Eigenvalue dan Eigenvector</a></li>
-
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Cross Produt</a></li>
 </ul>
 
@@ -393,11 +392,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#misal">Misal:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-menghitung-hasil-kali-silang">Contoh Menghitung Hasil Kali Silang</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-menggunakan-definisi">Solusi Menggunakan Definisi</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verifikasi-vektor-tegak-lurus">Verifikasi Vektor Tegak Lurus</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cek-dot-product">Cek dot product:</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Cek dot product:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verifikasi-vektor-tegak-lurus">Verifikasi Vektor Tegak Lurus</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cek-dot-product">Cek dot product:</a></li>
 </ul>
 </li>
 </ul>
@@ -431,6 +427,14 @@ u_2 v_3 - u_3 v_2 \\
 -(u_1 v_3 - u_3 v_1) \\
 u_1 v_2 - u_2 v_1
 \end{bmatrix}
+\end{split}\]</div>
+<p>Rumus:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+i=(1,0,0)\\
+j=(0,1,0)\\
+ixj=(0,0,1)=k\\
+jxi(0,0,-1)=-k
 \end{split}\]</div>
 </section>
 <section id="contoh-menghitung-hasil-kali-silang">
@@ -466,27 +470,25 @@ u_1 v_2 - u_2 v_1
 </section>
 <section id="verifikasi-vektor-tegak-lurus">
 <h3>Verifikasi Vektor Tegak Lurus<a class="headerlink" href="#verifikasi-vektor-tegak-lurus" title="Link to this heading">#</a></h3>
-<p>Diketahui hasil kali silang:<br />
-$<span class="math notranslate nohighlight">\(
+<p>Diketahui hasil kali silang:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \vec{u} \times \vec{v} = \begin{bmatrix} -13 \\ 2 \\ 7 \end{bmatrix}
-\)</span>$</p>
+\end{split}\]</div>
 <p>dan</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \vec{u} = \begin{bmatrix} 2 \\ -1 \\ 4 \end{bmatrix}, \quad
 \vec{v} = \begin{bmatrix} 3 \\ 2 \\ 5 \end{bmatrix}
 \end{split}\]</div>
+</section>
 <section id="cek-dot-product">
-<h4>Cek dot product:<a class="headerlink" href="#cek-dot-product" title="Link to this heading">#</a></h4>
+<h3>Cek dot product:<a class="headerlink" href="#cek-dot-product" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[
 (\vec{u} \times \vec{v}) \cdot \vec{u} =
 (-13)(2) + (2)(-1) + (7)(4) = -26 - 2 + 28 = 0
 \]</div>
-</section>
-</section>
-<section id="id1">
-<h3>Cek dot product:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[
 (\vec{u} \times \vec{v}) \cdot \vec{v} =
@@ -575,11 +577,8 @@ $<span class="math notranslate nohighlight">\(
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#misal">Misal:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-menghitung-hasil-kali-silang">Contoh Menghitung Hasil Kali Silang</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-menggunakan-definisi">Solusi Menggunakan Definisi</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verifikasi-vektor-tegak-lurus">Verifikasi Vektor Tegak Lurus</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cek-dot-product">Cek dot product:</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Cek dot product:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verifikasi-vektor-tegak-lurus">Verifikasi Vektor Tegak Lurus</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cek-dot-product">Cek dot product:</a></li>
 </ul>
 </li>
 </ul>
